@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
         if (direction == Vector2.zero && temp != Vector2.zero)
         {
             faceDirection = temp;
-            Debug.Log("Last face: " + faceDirection);
         }
     }
 
