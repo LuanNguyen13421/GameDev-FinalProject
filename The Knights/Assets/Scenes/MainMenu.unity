@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 248652139}
   - component: {fileID: 248652138}
   - component: {fileID: 248652137}
-  - component: {fileID: 248652136}
   - component: {fileID: 248652141}
+  - component: {fileID: 248652136}
   - component: {fileID: 248652140}
   m_Layer: 0
   m_Name: Enemy (5)
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badc91b5cb5cf394e9ea8418bb5b433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 0.4
   range: 1
 --- !u!50 &248652137
 Rigidbody2D:
@@ -259,6 +259,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  enemyType: 0
+  attackType: 0
+  damage: 1
+  attackRange: 0
+  attackSpeed: 0.5
+  attackForce: 2
+  projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
 --- !u!61 &248652141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -296,8 +303,8 @@ GameObject:
   - component: {fileID: 321714434}
   - component: {fileID: 321714433}
   - component: {fileID: 321714436}
-  - component: {fileID: 321714438}
   - component: {fileID: 321714440}
+  - component: {fileID: 321714438}
   - component: {fileID: 321714439}
   m_Layer: 0
   m_Name: Enemy
@@ -406,8 +413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badc91b5cb5cf394e9ea8418bb5b433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
-  range: 1
+  speed: 0.8
+  range: 2
 --- !u!114 &321714439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +428,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  enemyType: 0
+  attackType: 1
+  damage: 1
+  attackRange: 1.5
+  attackSpeed: 0.5
+  attackForce: 2
+  projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
 --- !u!61 &321714440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -542,8 +556,8 @@ GameObject:
   - component: {fileID: 690365652}
   - component: {fileID: 690365651}
   - component: {fileID: 690365650}
-  - component: {fileID: 690365649}
   - component: {fileID: 690365654}
+  - component: {fileID: 690365649}
   - component: {fileID: 690365653}
   m_Layer: 0
   m_Name: Enemy (6)
@@ -564,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badc91b5cb5cf394e9ea8418bb5b433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 0.4
   range: 1
 --- !u!50 &690365650
 Rigidbody2D:
@@ -667,6 +681,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  enemyType: 2
+  attackType: 0
+  damage: 1
+  attackRange: 0
+  attackSpeed: 0.5
+  attackForce: 2
+  projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
 --- !u!61 &690365654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -705,6 +726,7 @@ GameObject:
   - component: {fileID: 801904413}
   - component: {fileID: 801904415}
   - component: {fileID: 801904417}
+  - component: {fileID: 801904419}
   - component: {fileID: 801904416}
   - component: {fileID: 801904418}
   m_Layer: 0
@@ -847,13 +869,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564280d138d9f8d4fad5177df4a3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 10
   attackSpeed: 0.1
   damage: 1
   attackForce: 5
   knockBack: 1
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   animator: {fileID: 801904415}
+--- !u!61 &801904419
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801904411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.003402844, y: 0.018715687}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.14, y: 0.18}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15666318, y: 0.21451162}
+  m_EdgeRadius: 0
 --- !u!1 &1681427053
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,8 +913,8 @@ GameObject:
   - component: {fileID: 1681427057}
   - component: {fileID: 1681427056}
   - component: {fileID: 1681427055}
-  - component: {fileID: 1681427054}
   - component: {fileID: 1681427059}
+  - component: {fileID: 1681427054}
   - component: {fileID: 1681427058}
   m_Layer: 0
   m_Name: Enemy (2)
@@ -887,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badc91b5cb5cf394e9ea8418bb5b433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 0.4
   range: 1
 --- !u!50 &1681427055
 Rigidbody2D:
@@ -990,6 +1038,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  enemyType: 0
+  attackType: 0
+  damage: 1
+  attackRange: 0
+  attackSpeed: 0.5
+  attackForce: 2
+  projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
 --- !u!61 &1681427059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1027,8 +1082,8 @@ GameObject:
   - component: {fileID: 2026737662}
   - component: {fileID: 2026737661}
   - component: {fileID: 2026737660}
-  - component: {fileID: 2026737659}
   - component: {fileID: 2026737664}
+  - component: {fileID: 2026737659}
   - component: {fileID: 2026737663}
   m_Layer: 0
   m_Name: Enemy (4)
@@ -1049,7 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badc91b5cb5cf394e9ea8418bb5b433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 0.4
   range: 1
 --- !u!50 &2026737660
 Rigidbody2D:
@@ -1152,6 +1207,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  enemyType: 0
+  attackType: 0
+  damage: 1
+  attackRange: 0
+  attackSpeed: 0.5
+  attackForce: 2
+  projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
 --- !u!61 &2026737664
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1189,8 +1251,8 @@ GameObject:
   - component: {fileID: 2080265880}
   - component: {fileID: 2080265879}
   - component: {fileID: 2080265878}
-  - component: {fileID: 2080265877}
   - component: {fileID: 2080265882}
+  - component: {fileID: 2080265877}
   - component: {fileID: 2080265881}
   m_Layer: 0
   m_Name: Enemy (1)
@@ -1211,7 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badc91b5cb5cf394e9ea8418bb5b433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 0.4
   range: 1
 --- !u!50 &2080265878
 Rigidbody2D:
@@ -1314,6 +1376,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  enemyType: 0
+  attackType: 0
+  damage: 1
+  attackRange: 0
+  attackSpeed: 0.5
+  attackForce: 2
+  projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
 --- !u!61 &2080265882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1351,8 +1420,8 @@ GameObject:
   - component: {fileID: 2090869137}
   - component: {fileID: 2090869136}
   - component: {fileID: 2090869135}
-  - component: {fileID: 2090869134}
   - component: {fileID: 2090869139}
+  - component: {fileID: 2090869134}
   - component: {fileID: 2090869138}
   m_Layer: 0
   m_Name: Enemy (3)
@@ -1373,7 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badc91b5cb5cf394e9ea8418bb5b433c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
+  speed: 0.4
   range: 1
 --- !u!50 &2090869135
 Rigidbody2D:
@@ -1476,6 +1545,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  enemyType: 0
+  attackType: 0
+  damage: 1
+  attackRange: 0
+  attackSpeed: 0.5
+  attackForce: 2
+  projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
 --- !u!61 &2090869139
 BoxCollider2D:
   m_ObjectHideFlags: 0

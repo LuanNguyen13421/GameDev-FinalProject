@@ -26,17 +26,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackCooldown -= Time.deltaTime;
+        if (attackCooldown > 0)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
         if (attackCooldown <= 0)
         {
             isAttackable = true;
         }
 
         // Change attack range according to model
-        
+
 
         // Attack
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             if (isAttackable)
             {

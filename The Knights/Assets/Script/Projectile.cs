@@ -39,6 +39,14 @@ public class Projectile : MonoBehaviour
                 collision.gameObject.GetComponent<Enemy>().ModifyHealth(-damage);
                 Destroy();
             }
+        } 
+        else if (source == "Enemy")
+        {
+            if (collision.transform.tag == "Player")
+            {
+                collision.gameObject.GetComponent<Player>().ModifyHealth(-damage);
+                Destroy();
+            }
         }
     }
 
