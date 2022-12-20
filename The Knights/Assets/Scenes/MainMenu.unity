@@ -847,12 +847,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564280d138d9f8d4fad5177df4a3c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 10
   attackSpeed: 0.1
   damage: 1
   attackForce: 5
   knockBack: 1
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+  animator: {fileID: 801904415}
 --- !u!1 &1681427053
 GameObject:
   m_ObjectHideFlags: 0
