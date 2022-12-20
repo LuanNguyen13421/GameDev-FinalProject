@@ -25,7 +25,6 @@ public class EnemyController : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, target.position) <= range)
         {
-            Debug.Log("Target is in range");
             isFollowingTarget = true;
         }
         else
