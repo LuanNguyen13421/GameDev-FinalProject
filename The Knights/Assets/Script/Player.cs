@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public float maxHealth = 10.0f;
     public float health { get { return currentHealth; } }
+    public float posX { get { return transform.position.x; } }
+    public float posY { get { return transform.position.y; } }
     public float attackSpeed = 0.5f;
     public float damage = 1f;
     public float attackForce = 5.0f;
