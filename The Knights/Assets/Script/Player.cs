@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     float attackCooldown;
     bool isMeleeCombat = false;
-    //bool isShootable = true;
+    bool isAttackable = true;
 
     void Start()
     {
@@ -24,37 +24,30 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // attackCooldown -= Time.deltaTime;
-        // if (attackCooldown <= 0)
-        // {
-        //     isShootable = true;
-        // }
-        if (attackCooldown > 0)
+        attackCooldown -= Time.deltaTime;
+        if (attackCooldown <= 0)
         {
-            attackCooldown -= Time.deltaTime;
+            isAttackable = true;
         }
 
-        // Change attack range
+        // Change attack range according to model
         
 
         // Attack
         if(Input.GetButtonDown("Fire1"))
         {
-            if (isMeleeCombat)
+            if (isAttackable)
             {
-                if (attackCooldown <= 0)
+                if (isMeleeCombat)
                 {
-
+                    MeleeAttack();
                 }
-            }
-            else
-            {
-                if (attackCooldown <= 0)
+                else
                 {
                     RangedAttack();
-                    attackCooldown = attackSpeed;
-                    //isShootable = false;
                 }
+                attackCooldown = attackSpeed;
+                isAttackable = false;
             }
         }
     }
@@ -62,7 +55,7 @@ public class Player : MonoBehaviour
     void RangedAttack()
     {
         // Play animation
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("RangedAttack");
         // Create projectile
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().SetDamage(damage);
@@ -76,11 +69,10 @@ public class Player : MonoBehaviour
     void MeleeAttack()
     {
         // Play animation
+        animator.SetTrigger("MeleeAttack");
+        // Create projectile
 
-        // Detect enemy in attack range
 
-        // Damage enemy
-        
     }
 
     public void ModifyHealth(float amount)
