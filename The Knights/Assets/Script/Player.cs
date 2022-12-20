@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float health = 10.0f;
+    public float maxHealth = 10.0f;
+    public float health { get { return currentHealth; } }
     public float attackSpeed = 0.5f;
     public float damage = 1f;
     public float attackForce = 5.0f;
@@ -12,13 +13,14 @@ public class Player : MonoBehaviour
     public GameObject projectilePrefab;
     public Animator animator;
 
+    float currentHealth;
     float attackCooldown;
     bool isMeleeCombat = false;
     bool isAttackable = true;
 
     void Start()
     {
-
+        currentHealth = maxHealth - 2;
     }
 
     // Update is called once per frame
@@ -77,6 +79,6 @@ public class Player : MonoBehaviour
 
     public void ModifyHealth(float amount)
     {
-        health += amount;
+        currentHealth = currentHealth + amount;
     }
 }
