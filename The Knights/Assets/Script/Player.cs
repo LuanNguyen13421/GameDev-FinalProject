@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float maxHealth = 10.0f;
+    public HealthBar healthBar;
+    public float maxHealth = 20.0f;
     public float health { get { return currentHealth; } }
     public float posX { get { return transform.position.x; } }
     public float posY { get { return transform.position.y; } }
@@ -22,7 +23,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth - 2;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(currentHealth);
     }
 
     // Update is called once per frame
@@ -85,5 +87,6 @@ public class Player : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         currentHealth = currentHealth + amount;
+        healthBar.SetHealth(currentHealth);
     }
 }
