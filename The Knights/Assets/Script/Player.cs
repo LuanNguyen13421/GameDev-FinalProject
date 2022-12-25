@@ -24,12 +24,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(currentHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
         if (attackCooldown > 0)
         {
             attackCooldown -= Time.deltaTime;
@@ -87,6 +88,5 @@ public class Player : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         currentHealth = currentHealth + amount;
-        healthBar.SetHealth(currentHealth);
     }
 }
