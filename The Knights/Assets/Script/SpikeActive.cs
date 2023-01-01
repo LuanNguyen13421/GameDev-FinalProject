@@ -24,15 +24,12 @@ public class SpikeActive : MonoBehaviour
             
             if (isActive)
             {
-                Debug.Log("is unActive");
                 anim.SetBool("isActive", false);
                 isActive = false;
             }
             else
             {
-                Debug.Log("is Active");
                 anim.SetBool("isActive", true);
-
                 isActive = true;
             }
             timer = waitTime;
@@ -44,7 +41,6 @@ public class SpikeActive : MonoBehaviour
 
         if (controller != null && isActive == true)
         {
-            Debug.Log("damage!!!");
             controller.ModifyHealth(-1);
         }
     }

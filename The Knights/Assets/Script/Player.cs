@@ -21,9 +21,12 @@ public class Player : MonoBehaviour
     bool isMeleeCombat = false;
     bool isAttackable = true;
 
+    AudioSource audioSrc;
+    public AudioClip AttackSound;
     void Start()
     {
         currentHealth = maxHealth;
+        audioSrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -74,6 +77,7 @@ public class Player : MonoBehaviour
         Vector2 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 source = new Vector2(transform.position.x, transform.position.y);
         projectile.GetComponent<Rigidbody2D>().AddForce((target - source).normalized * attackForce, ForceMode2D.Impulse);
+        playSound(AttackSound);
     }
 
     void MeleeAttack()
@@ -88,5 +92,9 @@ public class Player : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         currentHealth = currentHealth + amount;
+    }
+    public void playSound(AudioClip clip)
+    {
+        audioSrc.PlayOneShot(clip);
     }
 }

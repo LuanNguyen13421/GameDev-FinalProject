@@ -15,15 +15,24 @@ public class Bomb : MonoBehaviour
     float posX = 0.0f;
     float posY = 0.0f;
     Player controller;
+    AudioSource bombAudioSrc;
+    public AudioClip explodeClip;
+    bool playSoundFlag = true;
     void Start()
     {
         anim = GetComponent<Animator>();
-        timer = bombWaitTime;   
+        bombAudioSrc = GetComponent<AudioSource>();
+        timer = bombWaitTime;
     }
     void Update()
     {
         if (flagExplode)
         {
+            if (playSoundFlag)
+            {
+                bombAudioSrc.PlayOneShot(explodeClip);
+                playSoundFlag = false;
+            }
             posX = controller.posX;
             posY = controller.posY;
             float xObj = transform.position.x;
@@ -47,9 +56,8 @@ public class Bomb : MonoBehaviour
         controller = other.GetComponent<Player>();
         if (controller != null)
         {
-            Debug.Log("Boom!!!");
             anim.SetBool("isTrigger", true);
-            flagExplode= true;
+            flagExplode = true;
         }
     }
 }
