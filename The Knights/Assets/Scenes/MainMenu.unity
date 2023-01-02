@@ -157,8 +157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  lookRange: 0.8
-  roamingRange: 0.4
+  lookRange: 0.4
+  roamingSpeed: 0.2
+  roamingRange: 0.3
+  timeBeforeNextRoam: 1
 --- !u!50 &248652137
 Rigidbody2D:
   serializedVersion: 4
@@ -415,8 +417,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.8
-  lookRange: 10
-  roamingRange: 10
+  lookRange: 0.4
+  roamingSpeed: 0.2
+  roamingRange: 0.3
+  timeBeforeNextRoam: 1
 --- !u!114 &321714439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1192,8 +1196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  lookRange: 0.8
-  roamingRange: 0.4
+  lookRange: 0.4
+  roamingSpeed: 0.2
+  roamingRange: 0.3
+  timeBeforeNextRoam: 1
 --- !u!50 &690365650
 Rigidbody2D:
   serializedVersion: 4
@@ -1881,8 +1887,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  lookRange: 0.8
-  roamingRange: 0.4
+  lookRange: 0.4
+  roamingSpeed: 0.2
+  roamingRange: 0.3
+  timeBeforeNextRoam: 1
 --- !u!50 &1681427055
 Rigidbody2D:
   serializedVersion: 4
@@ -2302,8 +2310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  lookRange: 0.8
-  roamingRange: 0.4
+  lookRange: 0.4
+  roamingSpeed: 0.2
+  roamingRange: 0.3
+  timeBeforeNextRoam: 1
 --- !u!50 &2026737660
 Rigidbody2D:
   serializedVersion: 4
@@ -2472,8 +2482,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  lookRange: 0.8
-  roamingRange: 0.4
+  lookRange: 0.4
+  roamingSpeed: 0.2
+  roamingRange: 0.3
+  timeBeforeNextRoam: 1
 --- !u!50 &2080265878
 Rigidbody2D:
   serializedVersion: 4
@@ -2642,8 +2654,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  lookRange: 0.8
-  roamingRange: 0.4
+  lookRange: 0.4
+  roamingSpeed: 0.2
+  roamingRange: 0.3
+  timeBeforeNextRoam: 1
 --- !u!50 &2090869135
 Rigidbody2D:
   serializedVersion: 4
