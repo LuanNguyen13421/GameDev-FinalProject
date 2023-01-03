@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
 
     public void ModifyHealth(float amount)
     {
-        currentHealth = currentHealth + amount;
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
     public void playSound(AudioClip clip)
     {
