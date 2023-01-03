@@ -7,13 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1327341420804310704, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5920026274225001507, guid: 61f877e32415cc1418db729cd033d985, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 59d1b6d15d12da54eaa6af5d63a8d6eb, type: 2}
     - target: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
       propertyPath: m_Name
-      value: Projectile Variant
+      value: Projectile Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7653679176899706447, guid: 61f877e32415cc1418db729cd033d985, type: 3}
       propertyPath: m_RootOrder

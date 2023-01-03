@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     Vector2 roamingTarget;
     bool isFollowingTarget = false;
     bool isRoaming = false;
-
+    
     Vector2 rootPosition;
 
     private void Start()
@@ -58,7 +58,6 @@ public class EnemyController : MonoBehaviour
             isRoaming = true;
             roamingTarget.x = Random.Range(rootPosition.x - roamingRange, rootPosition.x + roamingRange);
             roamingTarget.y = Random.Range(rootPosition.y - roamingRange, rootPosition.y + roamingRange);
-            Debug.Log(roamingTarget);
         }
     }
 
@@ -73,7 +72,6 @@ public class EnemyController : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, roamingTarget, roamingSpeed * Time.fixedDeltaTime);
             //Debug.Log("Roaming");
-            Debug.Log(roamingTarget);
             if (new Vector2(transform.position.x, transform.position.y) == roamingTarget)
             {
                 isRoaming = false;

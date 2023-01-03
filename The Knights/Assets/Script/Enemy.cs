@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject projectilePrefab;
 
+    public ParticleSystem deadEffect;
+
     float attackCooldown = 0f;
     bool isAttackable = true;
 
@@ -56,7 +58,9 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy();
+            var effect = Instantiate(deadEffect, transform.position, transform.rotation, gameObject.transform);
+            Destroy(effect, effect.main.duration);
+            Invoke("Destroy", effect.main.duration);
         }
 
         if (Vector2.Distance(transform.position, player.transform.position) <= attackRange && isAttackable)
