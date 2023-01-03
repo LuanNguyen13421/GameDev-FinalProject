@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,8 +17,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 temp = direction;
-        direction.x = Input.GetAxisRaw("Horizontal");
-        direction.y = Input.GetAxisRaw("Vertical");
         if (direction == Vector2.zero && temp != Vector2.zero)
         {
             faceDirection = temp;
@@ -31,5 +30,10 @@ public class PlayerController : MonoBehaviour
         {
             rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
         }
+    }
+
+    void OnMove(InputValue value)
+    {
+        direction = value.Get<Vector2>();
     }
 }
