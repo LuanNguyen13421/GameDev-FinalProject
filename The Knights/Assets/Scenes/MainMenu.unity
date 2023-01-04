@@ -2096,7 +2096,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 0
+      m_AllTileFlags: 1073741824
   - first: {x: -9, y: 7, z: 0}
     second:
       serializedVersion: 2
@@ -2146,7 +2146,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 0
+      m_AllTileFlags: 1073741824
   - first: {x: -4, y: 7, z: 0}
     second:
       serializedVersion: 2
@@ -2206,7 +2206,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 0
+      m_AllTileFlags: 1073741824
   - first: {x: 2, y: 7, z: 0}
     second:
       serializedVersion: 2
@@ -2256,7 +2256,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 0
+      m_AllTileFlags: 1073741824
   - first: {x: 7, y: 7, z: 0}
     second:
       serializedVersion: 2
@@ -2599,7 +2599,7 @@ Tilemap:
       - {fileID: 21300000, guid: 644cb2ae1e84ad146b327a613e7b7550, type: 3}
       - {fileID: 21300000, guid: 94fb7ffb4f1c4b747a7768de11e85271, type: 3}
       - {fileID: 21300000, guid: 258e5223111653d4fb91e7a0aec071d7, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: 7, z: 0}
@@ -2848,37 +2848,53 @@ CompositeCollider2D:
         Y: 5000000
       - X: -33906248
         Y: 17500000
-      - X: -25000000
+      - X: -25000100
         Y: 17500000
-      - X: -25000000
-        Y: 20000000
-      - X: -22500000
-        Y: 20000000
-      - X: -22500000
+      - X: -25000100
+        Y: 17499959
+      - X: -25000041
+        Y: 17499900
+      - X: -22499959
+        Y: 17499900
+      - X: -22499900
+        Y: 17499959
+      - X: -22499900
         Y: 17500000
-      - X: -12500000
+      - X: -12500100
         Y: 17500000
-      - X: -12500000
-        Y: 20000000
-      - X: -10000000
-        Y: 20000000
-      - X: -10000000
+      - X: -12500100
+        Y: 17499959
+      - X: -12500041
+        Y: 17499900
+      - X: -9999959
+        Y: 17499900
+      - X: -9999900
+        Y: 17499959
+      - X: -9999900
         Y: 17500000
-      - X: 2500000
+      - X: 2499900
         Y: 17500000
-      - X: 2500000
-        Y: 20000000
-      - X: 5000000
-        Y: 20000000
-      - X: 5000000
+      - X: 2499900
+        Y: 17499959
+      - X: 2499959
+        Y: 17499900
+      - X: 5000041
+        Y: 17499900
+      - X: 5000100
+        Y: 17499959
+      - X: 5000100
         Y: 17500000
-      - X: 15000000
+      - X: 14999900
         Y: 17500000
-      - X: 15000000
-        Y: 20000000
-      - X: 17500000
-        Y: 20000000
-      - X: 17500000
+      - X: 14999900
+        Y: 17499959
+      - X: 14999959
+        Y: 17499900
+      - X: 17500041
+        Y: 17499900
+      - X: 17500100
+        Y: 17499959
+      - X: 17500100
         Y: 17500000
       - X: 26406250
         Y: 17500000
@@ -2917,22 +2933,6 @@ CompositeCollider2D:
       - {x: -3.2500079, y: 0.3437587}
       - {x: -3.3906248, y: 0.50001}
       - {x: -3.3905952, y: 1.75}
-      - {x: -2.5, y: 1.7500292}
-      - {x: -2.4999707, y: 2}
-      - {x: -2.25, y: 1.9999707}
-      - {x: -2.249971, y: 1.75}
-      - {x: -1.25, y: 1.7500292}
-      - {x: -1.2499706, y: 2}
-      - {x: -1, y: 1.9999707}
-      - {x: -0.99997073, y: 1.75}
-      - {x: 0.25, y: 1.7500292}
-      - {x: 0.2500294, y: 2}
-      - {x: 0.5, y: 1.9999707}
-      - {x: 0.5000293, y: 1.75}
-      - {x: 1.5, y: 1.7500292}
-      - {x: 1.5000294, y: 2}
-      - {x: 1.75, y: 1.9999707}
-      - {x: 1.7500292, y: 1.75}
       - {x: 2.640625, y: 1.7499707}
       - {x: 2.6406183, y: -1.0000074}
   m_VertexDistance: 0.0005
@@ -8371,11 +8371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5719399917751857170, guid: 7026aa223b7fc8446b7c85bd22642ca4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.68256867
+      value: -1.636
       objectReference: {fileID: 0}
     - target: {fileID: 5719399917751857170, guid: 7026aa223b7fc8446b7c85bd22642ca4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.21273994
+      value: -0.74
       objectReference: {fileID: 0}
     - target: {fileID: 5719399917751857170, guid: 7026aa223b7fc8446b7c85bd22642ca4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8809,10 +8809,6 @@ PrefabInstance:
     - target: {fileID: 9081962175912855884, guid: 330931d580c89d040adf3666c5334ad7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9081962175912855885, guid: 330931d580c89d040adf3666c5334ad7, type: 3}
-      propertyPath: healthNumber
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 330931d580c89d040adf3666c5334ad7, type: 3}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 470259678322118578}
   - component: {fileID: 470259678322118579}
   - component: {fileID: 470259678322118604}
-  - component: {fileID: 470259678322118576}
   - component: {fileID: 470259678322118577}
   - component: {fileID: 1950587473}
+  - component: {fileID: 5801781625713174662}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -108,32 +108,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &470259678322118576
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470259678322118605}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.003432219, y: 0.036559265}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.2}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.06161002, y: 0.04559304}
-  m_EdgeRadius: 0
 --- !u!114 &470259678322118577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,3 +219,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &5801781625713174662
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470259678322118605}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.004071921, y: 0.052095458}
+  serializedVersion: 2
+  m_Radius: 0.06443018
