@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public HealthBar healthBar;
     public float maxHealth = 20.0f;
-    public float level = 1.0f;
+    public float level = 0.0f;
     public float health { get { return currentHealth; } }
     public float posX { get { return transform.position.x; } }
     public float posY { get { return transform.position.y; } }
@@ -101,8 +101,7 @@ public class Player : MonoBehaviour
     public void ModifyExp(float amount)
     {
         currentExp += amount;
-        CheckLevel();
-        Debug.Log("+" + amount);
+        //CheckLevel();
     }
 
     public void CheckLevel()
@@ -117,42 +116,37 @@ public class Player : MonoBehaviour
         {
             case 1:
             {
-                currentHealth += maxHealth * 0.1f;
-                maxHealth += maxHealth * 0.1f;
-                damage += damage * 0.2f;
-                transform.localScale = new Vector3(1.1f, 1.1f, 1.0f);
+                maxHealth = maxHealth * 1.1f;
+                damage = damage * 1.1f;
+                transform.localScale = new Vector3(1.2f, 1.2f, 1.0f);
                 break;
             }
             case 2:
             {
-                currentHealth += maxHealth * 0.1f;
-                maxHealth += maxHealth * 0.1f;
-                damage += damage * 0.2f;
-                transform.localScale = new Vector3(1.2f, 1.2f, 1.0f);
+                maxHealth = maxHealth * 1.2f;
+                damage = damage * 1.2f;
+                transform.localScale = new Vector3(1.4f, 1.4f, 1.0f);
                 break;
             }
             case 3:
             {
-                currentHealth += maxHealth * 0.1f;
-                maxHealth += maxHealth * 0.1f;
-                damage += damage * 0.2f;
-                transform.localScale = new Vector3(1.3f, 1.3f, 1.0f);
+                maxHealth = maxHealth * 1.3f;
+                damage = damage * 1.3f;
+                transform.localScale = new Vector3(1.6f, 1.6f, 1.0f);
                 break;
             }
             case 4:
             {
-                currentHealth += maxHealth * 0.1f;
-                maxHealth += maxHealth * 0.1f;
-                damage += damage * 0.2f;
-                transform.localScale = new Vector3(1.4f, 1.4f, 1.0f);
+                maxHealth = maxHealth * 1.4f;
+                damage = damage * 1.4f;
+                transform.localScale = new Vector3(1.8f, 1.8f, 1.0f);
                 break;
             }
             case 5:
             {
-                currentHealth += maxHealth * 0.1f;
-                maxHealth += maxHealth * 0.1f;
-                damage += damage * 0.2f;
-                transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
+                maxHealth = maxHealth * 1.5f;
+                damage = damage * 1.5f;
+                transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
                 break;
             }
         }
