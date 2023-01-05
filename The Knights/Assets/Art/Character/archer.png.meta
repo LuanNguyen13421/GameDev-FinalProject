@@ -4160,8 +4160,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       archer_182: 1141006069
-      archer_74: -675829563
       archer_55: -202316911
+      archer_61: 748522660
       archer_143: 1343124682
       archer_191: -1469195731
       archer_8: -1821159566
@@ -4240,14 +4240,14 @@ TextureImporter:
       archer_78: -653878519
       archer_135: -1518592928
       archer_155: 478409257
-      archer_50: -933739227
+      archer_181: -274814435
       archer_59: 293539444
       archer_127: 40105383
+      archer_50: -933739227
       archer_65: -1973859824
       archer_95: -1632448847
       archer_56: 1440779295
       archer_169: 190921111
-      archer_181: -274814435
       archer_52: 885038978
       archer_131: -1628229417
       archer_72: 569331746
@@ -4318,8 +4318,8 @@ TextureImporter:
       archer_173: -1421505589
       archer_113: -1636100487
       archer_174: 1449536439
-      archer_73: -2078994466
       archer_186: -617862637
+      archer_73: -2078994466
       archer_151: -819629678
       archer_157: -1382635126
       archer_31: -167425097
@@ -4346,11 +4346,11 @@ TextureImporter:
       archer_46: -2123273068
       archer_33: 1199689255
       archer_11: 487189905
-      archer_61: 748522660
       archer_68: -1714255202
+      archer_74: -675829563
       archer_94: 1095889233
-      archer_100: -2120875869
       archer_134: -968093250
+      archer_100: -2120875869
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
