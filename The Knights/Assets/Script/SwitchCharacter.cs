@@ -18,9 +18,10 @@ public class SwitchCharacter : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1)) 
         {
-             char1.gameObject.SetActive(true);
-             char2.gameObject.SetActive(false);
-             char3.gameObject.SetActive(false);
+            char1.gameObject.SetActive(true);
+            char2.gameObject.SetActive(false);
+            char3.gameObject.SetActive(false);
+             
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {

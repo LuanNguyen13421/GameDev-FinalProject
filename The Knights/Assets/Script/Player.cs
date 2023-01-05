@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public HealthBar healthBar;
     public float maxHealth = 20.0f;
+    public float level = 1.0f;
     public float health { get { return currentHealth; } }
     public float posX { get { return transform.position.x; } }
     public float posY { get { return transform.position.y; } }
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     float currentHealth;
+    float currentExp;
     float attackCooldown;
     bool isMeleeCombat = false;
     bool isAttackable = true;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        currentExp = 0;
         audioSrc = GetComponent<AudioSource>();
     }
 
@@ -63,6 +66,7 @@ public class Player : MonoBehaviour
                 isAttackable = false;
             }
         }
+
     }
 
     void RangedAttack()
@@ -93,6 +97,67 @@ public class Player : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
+
+    public void ModifyExp(float amount)
+    {
+        currentExp += amount;
+        CheckLevel();
+        Debug.Log("+" + amount);
+    }
+
+    public void CheckLevel()
+    {
+        if (currentExp >= 10 && currentExp < 20) level = 1;
+        else if (currentExp >= 20 && currentExp < 30) level = 2;
+        else if (currentExp >= 30 && currentExp < 40) level = 3;
+        else if (currentExp >= 40 && currentExp < 50) level = 4;
+        else if (currentExp >= 50) level = 5;
+
+        switch(level)
+        {
+            case 1:
+            {
+                currentHealth += maxHealth * 0.1f;
+                maxHealth += maxHealth * 0.1f;
+                damage += damage * 0.2f;
+                transform.localScale = new Vector3(1.1f, 1.1f, 1.0f);
+                break;
+            }
+            case 2:
+            {
+                currentHealth += maxHealth * 0.1f;
+                maxHealth += maxHealth * 0.1f;
+                damage += damage * 0.2f;
+                transform.localScale = new Vector3(1.2f, 1.2f, 1.0f);
+                break;
+            }
+            case 3:
+            {
+                currentHealth += maxHealth * 0.1f;
+                maxHealth += maxHealth * 0.1f;
+                damage += damage * 0.2f;
+                transform.localScale = new Vector3(1.3f, 1.3f, 1.0f);
+                break;
+            }
+            case 4:
+            {
+                currentHealth += maxHealth * 0.1f;
+                maxHealth += maxHealth * 0.1f;
+                damage += damage * 0.2f;
+                transform.localScale = new Vector3(1.4f, 1.4f, 1.0f);
+                break;
+            }
+            case 5:
+            {
+                currentHealth += maxHealth * 0.1f;
+                maxHealth += maxHealth * 0.1f;
+                damage += damage * 0.2f;
+                transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
+                break;
+            }
+        }
+    }
+
     public void playSound(AudioClip clip)
     {
         audioSrc.PlayOneShot(clip);

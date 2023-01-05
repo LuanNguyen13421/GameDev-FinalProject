@@ -61,6 +61,19 @@ public class Enemy : MonoBehaviour
             var effect = Instantiate(deadEffect, transform.position, transform.rotation, gameObject.transform);
             Destroy(effect, effect.main.duration);
             Invoke("Destroy", effect.main.duration);
+            if (enemyType == EnemyTypes.boss)
+            {
+                player.GetComponent<Player>().ModifyExp(5);
+            }
+            else if (enemyType == EnemyTypes.elite)
+            {
+                player.GetComponent<Player>().ModifyExp(3);
+            }
+            else 
+            {
+                player.GetComponent<Player>().ModifyExp(1);
+            }
+            health = 100;
         }
 
         if (Vector2.Distance(transform.position, player.transform.position) <= attackRange && isAttackable)
