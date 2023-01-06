@@ -15,12 +15,13 @@ public class Player : MonoBehaviour
     public float attackForce = 5.0f;
     public float knockBack = 1.0f;
     public GameObject projectilePrefab;
+    public GameObject projectileMeleePrefab;
     public Animator animator;
 
     float currentHealth;
     float currentExp;
     float attackCooldown;
-    bool isMeleeCombat = false;
+    [SerializeField] bool isMeleeCombat = false;
     bool isAttackable = true;
 
     AudioSource audioSrc;
@@ -88,7 +89,14 @@ public class Player : MonoBehaviour
     {
         // Play animation
         animator.SetTrigger("MeleeAttack");
-        // Create projectile
+        GameObject projectile = Instantiate(projectileMeleePrefab, transform.position, transform.rotation);
+        projectile.GetComponent<ProjectileForMelee>().SetDamage(damage);
+        projectile.GetComponent<ProjectileForMelee>().SetSource(gameObject.transform.tag);
+        projectile.GetComponent<ProjectileForMelee>().SetKnockBack(knockBack);
+        Vector2 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 source = new Vector2(transform.position.x, transform.position.y);
+        projectile.GetComponent<Rigidbody2D>().AddForce((target - source).normalized * attackForce, ForceMode2D.Impulse);
+        playSound(AttackSound);
 
 
     }

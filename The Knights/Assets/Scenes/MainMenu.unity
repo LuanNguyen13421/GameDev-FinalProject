@@ -2630,7 +2630,7 @@ Tilemap:
       - {fileID: 21300000, guid: 998767c0843c4974298ce81f8ac91169, type: 3}
       - {fileID: 21300000, guid: ae1895c667e9fcd40a16c76b679ebc27, type: 3}
       - {fileID: 21300000, guid: 0bd95c9b541c8a047a3a0c0b95f91844, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 6, z: 0}
@@ -3129,7 +3129,9 @@ MonoBehaviour:
   attackForce: 5
   knockBack: 1
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   animator: {fileID: 482158197}
+  isMeleeCombat: 1
   AttackSound: {fileID: 8300000, guid: 34b722ffc09ef4831a89b6502cd42f7e, type: 3}
 --- !u!61 &482158196
 BoxCollider2D:
@@ -3403,7 +3405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.434, y: 0.106, z: -10.414969}
+  m_LocalPosition: {x: 1.266, y: -0.157, z: -10.414969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3507,7 +3509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584363216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.434, y: 0.106, z: -10.414969}
+  m_LocalPosition: {x: 1.266, y: -0.157, z: -10.414969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4314,11 +4316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 470259678322118578, guid: 32151ae1f5753104fa0275d9aacee923, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2635342
+      value: -1.058
       objectReference: {fileID: 0}
     - target: {fileID: 470259678322118578, guid: 32151ae1f5753104fa0275d9aacee923, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.20424935
+      value: -0.439
       objectReference: {fileID: 0}
     - target: {fileID: 470259678322118578, guid: 32151ae1f5753104fa0275d9aacee923, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4562,7 +4564,9 @@ MonoBehaviour:
   attackForce: 5
   knockBack: 1
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   animator: {fileID: 801904415}
+  isMeleeCombat: 0
   AttackSound: {fileID: 8300000, guid: 58ccec2859d7544f5880b3202cc15dc1, type: 3}
 --- !u!61 &801904419
 BoxCollider2D:
@@ -4602,7 +4606,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: fae4cc44306c1c445838342eeacc4ac3, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.293
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8553,7 +8557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942294775}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.434, y: 0.106, z: -0.41496927}
+  m_LocalPosition: {x: 1.266, y: -0.157, z: -0.41496927}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9877,7 +9881,9 @@ MonoBehaviour:
   attackForce: 3
   knockBack: 1
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   animator: {fileID: 1768715900}
+  isMeleeCombat: 0
   AttackSound: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
 --- !u!61 &1768715898
 BoxCollider2D:
