@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -4190,9 +4190,9 @@ TextureImporter:
       soldier_123: -659803920
       soldier_91: 1716276217
       soldier_7: 2043419795
-      soldier_85: -790818296
       soldier_153: 1268197659
       soldier_178: -785958184
+      soldier_85: -790818296
       soldier_155: -637663792
       soldier_70: 1008188982
       soldier_131: -1179248625
@@ -4315,9 +4315,9 @@ TextureImporter:
       soldier_128: 1891683392
       soldier_47: 1416500764
       soldier_113: -371406180
-      soldier_169: -2026068492
-      soldier_119: 1630194509
       soldier_172: -2069937308
+      soldier_119: 1630194509
+      soldier_169: -2026068492
       soldier_164: 1840014292
       soldier_24: 686251621
       soldier_31: 1007178173

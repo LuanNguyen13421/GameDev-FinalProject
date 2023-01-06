@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -4232,8 +4232,8 @@ TextureImporter:
       mage_109: -1110272682
       mage_185: 1424646279
       mage_34: -1431521935
-      mage_0: 141196645
       mage_38: -716964918
+      mage_0: 141196645
       mage_116: -1847600392
       mage_70: -1086215211
       mage_4: 179962602
@@ -4288,8 +4288,8 @@ TextureImporter:
       mage_30: 1739139873
       mage_50: -188666345
       mage_86: 1536796780
-      mage_1: 1987009653
       mage_150: -1912821271
+      mage_1: 1987009653
       mage_111: -2131329230
       mage_163: -298707398
       mage_132: 415257801
