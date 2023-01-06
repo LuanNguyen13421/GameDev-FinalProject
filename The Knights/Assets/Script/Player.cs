@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public HealthBar healthBar;
     public float maxHealth = 20.0f;
     public float level = 0.0f;
     public float health { get { return currentHealth; }}
@@ -35,6 +36,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
         if (attackCooldown > 0)
         {
             attackCooldown -= Time.deltaTime;
