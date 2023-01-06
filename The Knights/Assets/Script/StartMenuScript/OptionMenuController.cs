@@ -12,4 +12,8 @@ public class OptionMenuController : MonoBehaviour
     {
         audioMixer.SetFloat("Volume", volume);
     }
+    public void SetFullScreen(bool isFullScreen)
+    {
+         Screen.fullScreen = isFullScreen;
+    }
 }

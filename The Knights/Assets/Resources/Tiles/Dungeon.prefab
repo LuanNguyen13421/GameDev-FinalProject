@@ -516,7 +516,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 0
+      m_AllTileFlags: 1073741824
   - first: {x: 4, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -526,7 +526,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 0
+      m_AllTileFlags: 1073741824
   - first: {x: 6, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -693,7 +693,7 @@ Tilemap:
       - {fileID: 21300000, guid: 998767c0843c4974298ce81f8ac91169, type: 3}
       - {fileID: 21300000, guid: ae1895c667e9fcd40a16c76b679ebc27, type: 3}
       - {fileID: 21300000, guid: 0bd95c9b541c8a047a3a0c0b95f91844, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 3, y: 3, z: 0}
