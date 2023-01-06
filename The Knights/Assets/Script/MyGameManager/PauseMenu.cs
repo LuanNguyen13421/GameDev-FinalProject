@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,11 +10,12 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isPause = false;
     public GameObject pauseMenu;
-    public GameObject settingMenu;
+    public GameObject player;
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)) 
+
         { 
             if(isPause)
             {
@@ -31,28 +33,21 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPause = false;
     }
-    void Pause()
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPause= true;
 
     }
-    public void Setting()
-    {
-        settingMenu.SetActive(true);
-        pauseMenu.SetActive(false);
-        isPause = true;
-    }
-    public void backToPauseMenu()
-    {
-        settingMenu.SetActive(false);
-        pauseMenu.SetActive(true);
-    }
-    public void backToStartMenuButton()
+    public void QuitGamePlay()
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
         isPause = false;
+    }
+    public void SaveGame()
+    {
+        MyGameManager.Instance.SaveGame(player);
     }
 }

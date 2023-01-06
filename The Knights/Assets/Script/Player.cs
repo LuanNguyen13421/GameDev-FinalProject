@@ -7,11 +7,11 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public float maxHealth = 20.0f;
     public float level = 0.0f;
-    public float health { get { return currentHealth; } }
-    public float posX { get { return transform.position.x; } }
-    public float posY { get { return transform.position.y; } }
+    public float health { get { return currentHealth; }}
     public float attackSpeed = 0.5f;
     public float damage = 1f;
+    public float posX { get { return transform.position.x; } }
+    public float posY { get { return transform.position.y; } }
     public float attackForce = 5.0f;
     public float knockBack = 1.0f;
     public GameObject projectilePrefab;

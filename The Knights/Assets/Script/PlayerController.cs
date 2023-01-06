@@ -6,12 +6,18 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
+    public float controllerPosX { get { return transform.position.x; } }
+    public float controllerPosY { get { return transform.position.y; } }
     Rigidbody2D rb;
     Vector2 direction;
     Vector2 faceDirection = Vector2.zero;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if(!MyGameManager.isNewGame)
+        {
+            transform.SetPositionAndRotation(MyGameManager.Instance.LoadPlayerPosition(),transform.rotation);
+        }
     }
 
     void Update()
@@ -31,7 +37,10 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
         }
     }
-
+    public void PlayerTransform(float x, float y)
+    {
+        rb.position.Set(x,y);
+    }
     void OnMove(InputValue value)
     {
         direction = value.Get<Vector2>();
