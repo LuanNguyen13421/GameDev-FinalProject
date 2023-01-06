@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -47,5 +48,11 @@ public class PauseMenu : MonoBehaviour
     {
         settingMenu.SetActive(false);
         pauseMenu.SetActive(true);
+    }
+    public void backToStartMenuButton()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        isPause = false;
     }
 }
