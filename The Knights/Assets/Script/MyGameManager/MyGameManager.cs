@@ -33,7 +33,7 @@ public class MyGameManager
     public void SaveGame(GameObject player)
     {
         // Save Game
-        string path = Path.Combine(Application.persistentDataPath, "playerController.hd");
+        string path = Path.Combine(Application.persistentDataPath, "playerControllerTemp.hd");
         FileStream file = File.Create(path);
         // Create The Knight data
         PlayerController theKnightController = player.GetComponent<PlayerController>();
@@ -52,7 +52,7 @@ public class MyGameManager
         Vector2 position;
         position.x = 0.0f;
         position.y = 0.0f;
-        string path = Path.Combine(Application.persistentDataPath, "playerController.hd");
+        string path = Path.Combine(Application.persistentDataPath, "playerControllerTemp.hd");
         if(File.Exists(path))
         {
             FileStream file = File.Open(path, FileMode.Open);
