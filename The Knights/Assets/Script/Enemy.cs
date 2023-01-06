@@ -44,8 +44,8 @@ public class Enemy : MonoBehaviour
 
         if (attackType == AttackTypes.range)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/imp");
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/imp");
+            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/wogol");
+            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/wogol");
         }
         else 
         {
