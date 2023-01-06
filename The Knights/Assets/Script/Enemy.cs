@@ -27,8 +27,12 @@ public class Enemy : MonoBehaviour
     float attackCooldown = 0f;
     bool isAttackable = true;
 
+    Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
+        
         player = GameObject.FindGameObjectWithTag("Player");
         if (enemyType == EnemyTypes.boss)
         {
@@ -40,7 +44,13 @@ public class Enemy : MonoBehaviour
 
         if (attackType == AttackTypes.range)
         {
-            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/imp");
+            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/imp");
+        }
+        else 
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/goblin");
+            animator.GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/goblin");
         }
     }
 

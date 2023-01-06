@@ -17,11 +17,15 @@ public class EnemyController : MonoBehaviour
     bool isRoaming = false;
     
     Vector2 rootPosition;
+    Animator animator;
+
+    Vector2 oldPosition;
 
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rootPosition = transform.position;
+        animator = GetComponent<Animator>();
     }
     private void OnDrawGizmos()
     {
@@ -35,6 +39,13 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if ((transform.position.x - oldPosition.x)*transform.localScale.x < 0)
+        {
+            Vector3 newScale = transform.localScale;
+            newScale.x *= -1;
+            transform.localScale = newScale;
+        }
+
         if (Vector2.Distance(transform.position, target.position) <= lookRange)
         {
             isFollowingTarget = true;
@@ -59,6 +70,17 @@ public class EnemyController : MonoBehaviour
             roamingTarget.x = Random.Range(rootPosition.x - roamingRange, rootPosition.x + roamingRange);
             roamingTarget.y = Random.Range(rootPosition.y - roamingRange, rootPosition.y + roamingRange);
         }
+
+        if (isFollowingTarget || isRoaming)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+
+        oldPosition = transform.position;
     }
 
     // Update is called once per frame

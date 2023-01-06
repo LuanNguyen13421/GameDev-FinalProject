@@ -4160,8 +4160,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       archer_182: 1141006069
-      archer_74: -675829563
-      archer_100: -2120875869
+      archer_55: -202316911
+      archer_134: -968093250
       archer_143: 1343124682
       archer_191: -1469195731
       archer_8: -1821159566
@@ -4346,11 +4346,11 @@ TextureImporter:
       archer_46: -2123273068
       archer_33: 1199689255
       archer_11: 487189905
-      archer_55: -202316911
       archer_61: 748522660
-      archer_94: 1095889233
       archer_68: -1714255202
-      archer_134: -968093250
+      archer_94: 1095889233
+      archer_74: -675829563
+      archer_100: -2120875869
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
