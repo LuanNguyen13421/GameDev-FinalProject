@@ -67,4 +67,32 @@ public class MyGameManager
         }
         return position;
     }
+    public void SaveGameSetting(float volume, bool isFullScreen, int resolutionIndex)
+    {
+        // Save Game
+        string path = Path.Combine(Application.persistentDataPath, "gameSetting.hd");
+        FileStream file = File.Create(path);
+        // Create setting data
+        GameSetting setting = new GameSetting(volume, isFullScreen, resolutionIndex);
+        // Create binary formatter
+        BinaryFormatter formatter = new BinaryFormatter();
+        formatter.Serialize(file, setting);
+        file.Close();
+        Debug.Log("Game's Setting saved " + path);
+    }
+    public GameSetting LoadGameSetting()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "gameSetting.hd");
+        if (File.Exists(path))
+        {
+            FileStream file = File.Open(path, FileMode.Open);
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            GameSetting setting = (GameSetting)formatter.Deserialize(file);
+            file.Close();
+            Debug.Log("Game loaded" + path);
+            return setting;
+        }
+        return null;
+    }
 }
