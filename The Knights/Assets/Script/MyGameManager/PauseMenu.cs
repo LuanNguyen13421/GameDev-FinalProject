@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isPause = false;
     public GameObject pauseMenu;
     public GameObject player;
+    public GameObject LoseGameBanner;
     // Update is called once per frame
     void Update()
     {
@@ -42,12 +43,18 @@ public class PauseMenu : MonoBehaviour
     }
     public void QuitGamePlay()
     {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
         isPause = false;
+        SceneManager.LoadScene(0);
     }
     public void SaveGame()
     {
         MyGameManager.Instance.SaveGame(player);
+    }
+    public void ShowLoseGame()
+    {
+        LoseGameBanner.SetActive(true);
+        Time.timeScale = 0f;
+        isPause = true;
     }
 }

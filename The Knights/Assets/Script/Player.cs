@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     float invincibleTimer;
     bool isInvincible;
     public float timeInvincible = 1.0f;
+    public bool isDeath = false;
 
     // ===================== ATTACK ==================
     float attackCooldown;
@@ -152,6 +153,10 @@ public class Player : MonoBehaviour
             playSound(hitSound);
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        if (currentHealth == 0)
+        {
+            isDeath = true;
+        }
     }
 
     public void ModifyExp(float amount)
