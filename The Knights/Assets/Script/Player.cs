@@ -5,28 +5,44 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] PlayerController controller;
-    public HealthBar healthBar;
-    public float maxHealth = 20.0f;
+
+    // ===================== EXP ==================
     public float level = 0.0f;
-    public float health { get { return currentHealth; }}
-    public float attackSpeed = 0.5f;
-    public float damage = 1f;
+    float currentExp;
+
+    // ===================== POSITION ==================
     public float posX { get { return transform.position.x; } }
     public float posY { get { return transform.position.y; } }
-    public float attackForce = 5.0f;
-    public float knockBack = 1.0f;
+
+    // ===================== PROJECTILE ==================
     public GameObject projectilePrefab;
     public GameObject projectileMeleePrefab;
-    public Animator animator;
-    Vector2 lookDirection = new Vector2(1, 0);
-    Vector2 currentInput;
+
+    // ===================== HEALTH ==================
+    public HealthBar healthBar;
+    public float maxHealth = 20.0f;
+    public float health { get { return currentHealth; } }
     float currentHealth;
-    float currentExp;
+    float invincibleTimer;
+    bool isInvincible;
+    public float timeInvincible = 1.0f;
+
+    // ===================== ATTACK ==================
     float attackCooldown;
     [SerializeField] bool isMeleeCombat = false;
     bool isAttackable = true;
+    public float attackSpeed = 0.5f;
+    public float damage = 1f;
+    public float attackForce = 5.0f;
+    public float knockBack = 1.0f;
 
+    // ===================== ANIMATION ==================
+    public Animator animator;
+    Vector2 lookDirection = new Vector2(1, 0);
+
+    // ===================== AUDIO ==================
     AudioSource audioSrc;
+    public AudioClip hitSound;
     public AudioClip AttackSound;
     void Start()
     {
@@ -38,6 +54,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // ================= HEALTH ====================
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+                isInvincible = false;
+        }
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
         if (attackCooldown > 0)
@@ -55,7 +78,6 @@ public class Player : MonoBehaviour
             lookDirection.Set(move.x, move.y);
             lookDirection.Normalize();
         }
-        currentInput = move;
         // ============== ANIMATION =======================
         animator.SetFloat("Move X", lookDirection.x);
         animator.SetFloat("Move Y", lookDirection.y);
@@ -88,7 +110,7 @@ public class Player : MonoBehaviour
     void RangedAttack()
     {
         // Play animation
-        animator.SetTrigger("Hit");
+        animator.SetTrigger("Shoot");
         // Create projectile
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().SetDamage(damage);
@@ -118,6 +140,17 @@ public class Player : MonoBehaviour
 
     public void ModifyHealth(float amount)
     {
+        if (amount< 0) 
+        {
+            if (isInvincible)
+                return;
+
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+
+            animator.SetTrigger("Hit");
+            playSound(hitSound);
+        }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
 

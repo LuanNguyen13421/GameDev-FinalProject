@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float controllerPosX { get { return transform.position.x; } }
     public float controllerPosY { get { return transform.position.y; } }
     Rigidbody2D rb;
-    public Vector2 direction;
+    Vector2 direction;
     Vector2 faceDirection = Vector2.zero;
     public float horizontal;
     public float vertical;

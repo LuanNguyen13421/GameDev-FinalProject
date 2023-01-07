@@ -45,7 +45,7 @@ public class Bomb : MonoBehaviour
                 float distance = MathF.Sqrt(Dx * Dx + Dy * Dy);
                 if (distance < range)
                 {
-                    controller.ModifyHealth(-1 * damage);
+                    controller.ModifyHealth(-1.0f * damage);
                 }
                 Destroy(gameObject);
             }

@@ -2693,17 +2693,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 942294778}
-  healthBar: {fileID: 1370721556}
-  maxHealth: 300
   level: 0
+  projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
+  healthBar: {fileID: 1370721556}
+  maxHealth: 80
+  timeInvincible: 1
+  isMeleeCombat: 1
   attackSpeed: 0.1
   damage: 1
   attackForce: 5
   knockBack: 1
-  projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
-  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   animator: {fileID: 482158197}
-  isMeleeCombat: 1
+  hitSound: {fileID: 8300000, guid: 2876e7fa4419a4a7096b8bb38641daa3, type: 3}
   AttackSound: {fileID: 8300000, guid: 34b722ffc09ef4831a89b6502cd42f7e, type: 3}
 --- !u!61 &482158196
 BoxCollider2D:
@@ -4213,17 +4215,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 942294778}
+  level: 0
+  projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
   maxHealth: 30
-  level: 0
+  timeInvincible: 1
+  isMeleeCombat: 0
   attackSpeed: 0.5
   damage: 1
   attackForce: 5
   knockBack: 1
-  projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
-  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   animator: {fileID: 801904415}
-  isMeleeCombat: 0
+  hitSound: {fileID: 8300000, guid: 2876e7fa4419a4a7096b8bb38641daa3, type: 3}
   AttackSound: {fileID: 8300000, guid: 58ccec2859d7544f5880b3202cc15dc1, type: 3}
 --- !u!61 &801904419
 BoxCollider2D:
@@ -8118,7 +8122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.2
-  direction: {x: 0, y: 0}
   horizontal: 0
   vertical: 0
 --- !u!50 &942294779
@@ -8990,17 +8993,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 942294778}
+  level: 0
+  projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
+  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
   maxHealth: 20
-  level: 0
+  timeInvincible: 1
+  isMeleeCombat: 0
   attackSpeed: 0.5
   damage: 1
   attackForce: 3
   knockBack: 1
-  projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
-  projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   animator: {fileID: 1768715900}
-  isMeleeCombat: 0
+  hitSound: {fileID: 8300000, guid: 2876e7fa4419a4a7096b8bb38641daa3, type: 3}
   AttackSound: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
 --- !u!61 &1768715898
 BoxCollider2D:
