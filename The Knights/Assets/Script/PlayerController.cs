@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     public float controllerPosX { get { return transform.position.x; } }
     public float controllerPosY { get { return transform.position.y; } }
     Rigidbody2D rb;
-    Vector2 direction;
+    public Vector2 direction;
     Vector2 faceDirection = Vector2.zero;
+    public float horizontal;
+    public float vertical;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour
         {
             faceDirection = temp;
         }
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
     }
 
     // Update is called once per frame

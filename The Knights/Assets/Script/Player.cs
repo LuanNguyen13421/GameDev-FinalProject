@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] PlayerController controller;
     public HealthBar healthBar;
     public float maxHealth = 20.0f;
     public float level = 0.0f;
@@ -17,7 +18,8 @@ public class Player : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject projectileMeleePrefab;
     public Animator animator;
-
+    Vector2 lookDirection = new Vector2(1, 0);
+    Vector2 currentInput;
     float currentHealth;
     float currentExp;
     float attackCooldown;
@@ -47,6 +49,18 @@ public class Player : MonoBehaviour
             isAttackable = true;
         }
 
+        Vector2 move = new Vector2(controller.horizontal, controller.vertical);
+        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
+        {
+            lookDirection.Set(move.x, move.y);
+            lookDirection.Normalize();
+        }
+        currentInput = move;
+        // ============== ANIMATION =======================
+        animator.SetFloat("Move X", lookDirection.x);
+        animator.SetFloat("Move Y", lookDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
+
         // Change attack range according to model
 
 
@@ -55,6 +69,7 @@ public class Player : MonoBehaviour
         {
             if (isAttackable)
             {
+                
                 if (isMeleeCombat)
                 {
                     MeleeAttack();
@@ -73,7 +88,7 @@ public class Player : MonoBehaviour
     void RangedAttack()
     {
         // Play animation
-        animator.SetTrigger("RangedAttack");
+        animator.SetTrigger("Hit");
         // Create projectile
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().SetDamage(damage);
@@ -88,7 +103,7 @@ public class Player : MonoBehaviour
     void MeleeAttack()
     {
         // Play animation
-        animator.SetTrigger("MeleeAttack");
+        animator.SetTrigger("Hit");
         GameObject projectile = Instantiate(projectileMeleePrefab, transform.position, transform.rotation);
         projectile.GetComponent<ProjectileForMelee>().SetDamage(damage);
         projectile.GetComponent<ProjectileForMelee>().SetSource(gameObject.transform.tag);
