@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class AreEnemiesDead : MonoBehaviour
 {
+    
     [SerializeField] PauseMenu menu;
     List<GameObject> listOfEnemies = new List<GameObject>();
     bool isWin = false;
-    public void Start()
+    private void Start()
     {
         listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        Debug.Log(listOfEnemies.Count);
+        Debug.Log("Enemy Count: " + listOfEnemies.Count);
     }
     private void Update()
     {
