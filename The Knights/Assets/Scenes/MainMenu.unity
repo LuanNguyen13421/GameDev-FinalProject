@@ -3076,7 +3076,7 @@ MonoBehaviour:
   isDeath: 0
   isMeleeCombat: 1
   attackSpeed: 0.1
-  damage: 1
+  damage: 7
   attackForce: 5
   knockBack: 1
   animator: {fileID: 482158197}
@@ -4682,7 +4682,7 @@ MonoBehaviour:
   isDeath: 0
   isMeleeCombat: 0
   attackSpeed: 0.5
-  damage: 100
+  damage: 2
   attackForce: 5
   knockBack: 1
   animator: {fileID: 801904415}
@@ -10046,7 +10046,7 @@ MonoBehaviour:
   isDeath: 0
   isMeleeCombat: 0
   attackSpeed: 0.5
-  damage: 1
+  damage: 3
   attackForce: 3
   knockBack: 1
   animator: {fileID: 1768715900}

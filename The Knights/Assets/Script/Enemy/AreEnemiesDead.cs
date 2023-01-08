@@ -10,7 +10,6 @@ public class AreEnemiesDead : MonoBehaviour
     void Start()
     {
         listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        Debug.Log(listOfEnemies.Count);
     }
     private void Update()
     {
@@ -27,7 +26,6 @@ public class AreEnemiesDead : MonoBehaviour
         {
             listOfEnemies.Remove(enemy);
         }
-        Debug.Log(listOfEnemies.Count);
     }
 
     public bool areEnemysDead()
