@@ -10,7 +10,6 @@ public class EnterPoint : MonoBehaviour
         Player controller = other.GetComponent<Player>();
         if (controller != null)
         {
-            Debug.Log("!!!");
             menu.ShowWinGame();
         }
     }
