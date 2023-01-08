@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 3f;
+    //[SerializeField] AreEnemiesDead controlEnemy;
     GameObject player;
 
     enum MeleeSpecies { bigZombie, chort, goblin, maskedOrc, orge, skeleton, swampy, tinyZombie, warriorOrc}
@@ -88,7 +89,6 @@ public class Enemy : MonoBehaviour
             {
                 player.GetComponent<Player>().ModifyExp(1);
             }
-            health = 100;
         }
 
         if (Vector2.Distance(transform.position, player.transform.position) <= attackRange && isAttackable)
@@ -101,6 +101,7 @@ public class Enemy : MonoBehaviour
 
     private void Destroy()
     {
+        //controlEnemy.KilledEnemy(gameObject);
         GameObject.Destroy(gameObject);
     }
 
