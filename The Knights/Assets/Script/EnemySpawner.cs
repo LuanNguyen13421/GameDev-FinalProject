@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public float delay;
     public ParticleSystem spawnEffect;
-    void Start()
+    public void StartSpawnCount()
     {
         gameObject.SetActive(false);
         Invoke("Spawn", delay);

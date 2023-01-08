@@ -8,8 +8,9 @@ public class Enemy : MonoBehaviour
 
     GameObject player;
 
+    enum MeleeSpecies { bigZombie, chort, goblin, maskedOrc, orge, skeleton, swampy, tinyZombie, warriorOrc}
+    enum RangeSpecies { bigDemon, doc, imp, lizard, necromancer, pumpkin, shamanOrc, wogol}
     enum EnemyTypes { normal, elite, boss}
-
     enum AttackTypes { melee, range }
 
     [SerializeField] EnemyTypes enemyType;
@@ -28,6 +29,11 @@ public class Enemy : MonoBehaviour
     bool isAttackable = true;
 
     Animator animator;
+
+    private void OnGUI()
+    {
+        
+    }
 
     private void Start()
     {
