@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 3f;
-
+    [SerializeField] AreEnemiesDead controlEnemy;
     GameObject player;
 
     enum EnemyTypes { normal, elite, boss}
@@ -96,6 +96,7 @@ public class Enemy : MonoBehaviour
 
     private void Destroy()
     {
+        controlEnemy.KilledEnemy(gameObject);
         GameObject.Destroy(gameObject);
     }
 
