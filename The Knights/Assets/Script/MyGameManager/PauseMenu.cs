@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+        Debug.Log(SceneManager.sceneCount);
     }
     public void Resume()
     {
@@ -68,8 +69,8 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         isPause = false;
-        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount)
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-      else SceneManager.LoadScene(0);
+        if (SceneManager.GetActiveScene().buildIndex <= SceneManager.sceneCount)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else SceneManager.LoadScene(0);
     }
 }
