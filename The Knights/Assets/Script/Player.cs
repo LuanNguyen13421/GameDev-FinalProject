@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
     void MeleeAttack()
     {
         // Play animation
-        animator.SetTrigger("Hit");
+        animator.SetTrigger("Shoot");
         GameObject projectile = Instantiate(projectileMeleePrefab, transform.position, transform.rotation);
         projectile.GetComponent<ProjectileForMelee>().SetDamage(damage);
         projectile.GetComponent<ProjectileForMelee>().SetSource(gameObject.transform.tag);

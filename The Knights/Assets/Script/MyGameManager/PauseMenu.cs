@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject player;
     public GameObject LoseGameBanner;
+    public GameObject WinGameBanner;
     // Update is called once per frame
     void Update()
     {
@@ -57,9 +58,17 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPause = true;
     }
+    public void ShowWinGame()
+    {
+        WinGameBanner.SetActive(true);
+        Time.timeScale = 0f;
+        isPause = true;
+    }
     public void LoadNextScene()
     {
-      if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount)
+        Time.timeScale = 1.0f;
+        isPause = false;
+        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount)
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
       else SceneManager.LoadScene(0);
     }
