@@ -15,7 +15,7 @@ public class OptionMenuController : MonoBehaviour
     Resolution[] resolutions;
     GameSetting setting = new GameSetting(100, true, 0);
 
-    private void Start()
+    public void Start()
     {
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();

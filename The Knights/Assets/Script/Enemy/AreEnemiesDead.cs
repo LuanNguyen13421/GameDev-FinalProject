@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AreEnemiesDead : MonoBehaviour
@@ -7,9 +8,10 @@ public class AreEnemiesDead : MonoBehaviour
     [SerializeField] PauseMenu menu;
     List<GameObject> listOfEnemies = new List<GameObject>();
     bool isWin = false;
-    void Start()
+    public void Start()
     {
         listOfEnemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        Debug.Log(listOfEnemies.Count);
     }
     private void Update()
     {
