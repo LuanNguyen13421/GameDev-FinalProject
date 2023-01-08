@@ -17,5 +17,6 @@ public class EnemySpawner : MonoBehaviour
         var effect = Instantiate(spawnEffect, transform.position, transform.rotation, gameObject.transform);
         Destroy(effect, effect.main.duration);
         gameObject.SetActive(true);
+        gameObject.GetComponent<Enemy>().SetAttack(true);
     }    
 }

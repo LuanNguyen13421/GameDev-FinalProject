@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
     //[SerializeField] AreEnemiesDead controlEnemy;
     GameObject player;
 
-    enum MeleeSpecies { bigZombie, chort, goblin, maskedOrc, orge, skeleton, swampy, tinyZombie, warriorOrc}
-    enum RangeSpecies { bigDemon, doc, imp, lizard, necromancer, pumpkin, shamanOrc, wogol}
+    enum Species { none, bigDemon, doc, imp, lizard, necromancer, pumpkin, shamanOrc, wogol, bigZombie, chort, goblin, maskedOrc, orge, skeleton, swampy, tinyZombie, warriorOrc}
     enum EnemyTypes { normal, elite, boss}
     enum AttackTypes { melee, range }
 
+    Dictionary<Species, string> speciesAsset = new Dictionary<Species, string>();
+
     [SerializeField] EnemyTypes enemyType;
+    [SerializeField] Species species;
     [SerializeField] AttackTypes attackType;
 
     public float damage = 1f;
@@ -26,13 +28,39 @@ public class Enemy : MonoBehaviour
     public ParticleSystem deadEffect;
 
     float attackCooldown = 0f;
-    bool isAttackable = true;
+    bool isAttackable = false;
 
     Animator animator;
 
     private void OnGUI()
     {
         
+    }
+
+    public void SetAttack(bool value)
+    {
+        isAttackable = value;
+    }
+
+    private void Awake()
+    {
+        speciesAsset.Add(Species.bigDemon, "big_demon");
+        speciesAsset.Add(Species.doc, "doc");
+        speciesAsset.Add(Species.imp, "imp");
+        speciesAsset.Add(Species.lizard, "lizard");
+        speciesAsset.Add(Species.necromancer, "necromancer");
+        speciesAsset.Add(Species.pumpkin, "pumpkin");
+        speciesAsset.Add(Species.shamanOrc, "shaman_orc");
+        speciesAsset.Add(Species.wogol, "wogol");
+        speciesAsset.Add(Species.bigZombie, "big_zombie");
+        speciesAsset.Add(Species.chort, "chort");
+        speciesAsset.Add(Species.goblin, "goblin");
+        speciesAsset.Add(Species.maskedOrc, "maskedOrc");
+        speciesAsset.Add(Species.orge, "orge");
+        speciesAsset.Add(Species.skeleton, "skeleton");
+        speciesAsset.Add(Species.swampy, "swampy");
+        speciesAsset.Add(Species.tinyZombie, "tiny_zombie");
+        speciesAsset.Add(Species.warriorOrc, "warriorOrc");
     }
 
     private void Start()
@@ -47,16 +75,23 @@ public class Enemy : MonoBehaviour
         {
             gameObject.transform.localScale *= 1.5f;
         }
-
-        if (attackType == AttackTypes.range)
+        if (species == Species.none)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/wogol");
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/wogol");
+            if (attackType == AttackTypes.range)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/wogol");
+                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/wogol");
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/goblin");
+                animator.GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/goblin");
+            }
         }
-        else 
+        else
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/goblin");
-            animator.GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/goblin");
+            gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/" + speciesAsset[species]);
+            animator.GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/" + speciesAsset[species]);
         }
     }
 
