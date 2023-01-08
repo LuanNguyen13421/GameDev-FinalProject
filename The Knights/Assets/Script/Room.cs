@@ -9,6 +9,8 @@ public class Room : MonoBehaviour
 
     bool isFinished = true;
     bool hasStarted = false;
+
+    int enemyCount = 0;
     void Start()
     {
         var enemies = GetComponentsInChildren<Transform>();
@@ -17,6 +19,7 @@ public class Room : MonoBehaviour
             if (enemies[i].transform.name.Contains("Enemy"))
             {
                 enemies[i].gameObject.GetComponent<Renderer>().enabled = false;
+                enemyCount++;
             }
         }
 
@@ -34,16 +37,11 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var enemies = GetComponentsInChildren<Transform>();
-        for(int i = 0; i < enemies.Length; i++)
+        if(transform.childCount - doorList.Count == 0)
         {
-            if(enemies[i].name.Contains("Enemy"))
-            {
-                return;
-            }
+            isFinished = true;
+            EndRoom();
         }
-        isFinished = true;
-        EndRoom();
     }
 
     public void StartRoom()
@@ -55,11 +53,6 @@ public class Room : MonoBehaviour
 
         hasStarted = true;
 
-        for (int i = 0; i < doorList.Count; i++)
-        { 
-            doorList[i].Close();
-        }
-
         var enemies = GetComponentsInChildren<Transform>();
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -70,13 +63,28 @@ public class Room : MonoBehaviour
                 enemies[i].gameObject.GetComponent<EnemySpawner>().StartSpawnCount();
             }
         }
+
+        CloseDoor();
     }
 
-    void EndRoom()
+    void OpenDoor()
     {
         for (int i = 0; i < doorList.Count; i++)
         {
             doorList[i].Open();
         }
+    }
+
+    void CloseDoor()
+    {
+        for (int i = 0; i < doorList.Count; i++)
+        {
+            doorList[i].Close();
+        }
+    }
+
+    void EndRoom()
+    {
+        OpenDoor();
     }
 }
