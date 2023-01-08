@@ -28,7 +28,6 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-        Debug.Log(SceneManager.sceneCount);
     }
     public void Resume()
     {
