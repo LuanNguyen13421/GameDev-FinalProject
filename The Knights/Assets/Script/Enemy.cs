@@ -93,6 +93,11 @@ public class Enemy : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Art/Monster/" + speciesAsset[species]);
             animator.GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animation/Monster/" + speciesAsset[species]);
         }
+
+        if (attackType == AttackTypes.melee)
+        {
+            attackRange = 0.2f;
+        }
     }
 
     // Update is called once per frame
