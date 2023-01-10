@@ -128,6 +128,7 @@ public class Player : MonoBehaviour
         // Play animation
         animator.SetTrigger("Shoot");
         GameObject projectile = Instantiate(projectileMeleePrefab, transform.position, transform.rotation);
+        Debug.Log(damage);
         projectile.GetComponent<ProjectileForMelee>().SetDamage(damage);
         projectile.GetComponent<ProjectileForMelee>().SetSource(gameObject.transform.tag);
         projectile.GetComponent<ProjectileForMelee>().SetKnockBack(knockBack);
@@ -180,12 +181,12 @@ public class Player : MonoBehaviour
             {
                 maxHealth = maxHealth + 1.1f;
                 currentHealth = maxHealth;
-                damage = damage * 1.1f;
+                damage = damage + 1.1f;
                 transform.localScale = new Vector3(1.05f, 1.05f, 1.0f);
                     if (isMeleeCombat)
                     {
                         maxHealth = maxHealth + 1.5f;
-                        damage = damage - 1.5f;
+                        damage = damage + 1.5f;
                     }
                     break;
             }
@@ -193,12 +194,12 @@ public class Player : MonoBehaviour
             {
                 maxHealth = maxHealth + 1.2f;
                 currentHealth = maxHealth;
-                damage = damage * 1.2f;
+                damage = damage + 1.2f;
                 transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
                     if (isMeleeCombat)
                     {
                         maxHealth = maxHealth + 1.5f;
-                        damage = damage - 1.5f;
+                        damage = damage + 1.5f;
                     }
                     break;
             }
@@ -211,7 +212,7 @@ public class Player : MonoBehaviour
                     if (isMeleeCombat)
                     {
                         maxHealth = maxHealth + 1.5f;
-                        damage = damage - 1.5f;
+                        damage = damage + 1.5f;
                     }
                     break;
             }
