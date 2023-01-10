@@ -11,7 +11,7 @@ public class PotionCollectible : MonoBehaviour
 
         if (controller != null)
         {
-            if (controller.health < controller.maxHealth)
+            if (controller.health < controller.getMaxHealth())
             {
                 controller.ModifyHealth(healthNumber);
                 Destroy(gameObject);

@@ -10,7 +10,9 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isPause = false;
     public GameObject pauseMenu;
-    public GameObject player;
+    public Player player1;
+    public Player player2;
+    public Player player3;
     public GameObject LoseGameBanner;
     public GameObject WinGameBanner;
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void SaveGame()
     {
-        MyGameManager.Instance.SaveGame(player);
+        MyGameManager.Instance.SaveGame(player1.getExp(), player2.getExp(), player3.getExp(), SceneManager.GetActiveScene().buildIndex);
     }
     public void ShowLoseGame()
     {
@@ -60,6 +62,7 @@ public class PauseMenu : MonoBehaviour
     public void ShowWinGame()
     {
         WinGameBanner.SetActive(true);
+        MyGameManager.Instance.SaveGame(player1.getExp(), player2.getExp(), player3.getExp(), SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 0f;
         isPause = true;
     }

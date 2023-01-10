@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] PlayerController controller;
-
+    [SerializeField] TheKnightData data;
     // ===================== EXP ==================
     public float level = 0.0f;
-    float currentExp;
+    public float currentExp;
+    public float getExp() { return currentExp; }
 
     // ===================== POSITION ==================
     public float posX { get { return transform.position.x; } }
@@ -20,7 +21,11 @@ public class Player : MonoBehaviour
 
     // ===================== HEALTH ==================
     public HealthBar healthBar;
-    public float maxHealth = 20.0f;
+    private float maxHealth = 20.0f;
+    public float getMaxHealth()
+    {
+        return maxHealth;
+    }
     public float health { get { return currentHealth; } }
     float currentHealth;
     float invincibleTimer;
@@ -50,8 +55,26 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         currentExp = 0;
         audioSrc = GetComponent<AudioSource>();
+        if(!MyGameManager.isNewGame)
+        {
+            data = MyGameManager.Instance.LoadSave();
+            if(gameObject.name == "Archer")
+            {
+                Debug.Log("Archer");
+                currentExp = data.getChar1();
+            }
+            else if (gameObject.name == "Mage")
+            {
+                Debug.Log("Mage");
+                currentExp = data.getChar2();
+            }
+            else if (gameObject.name == "Soldier")
+            {
+                Debug.Log("Soldier");
+                currentExp = data.getChar3();
+            }
+        }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -225,7 +248,7 @@ public class Player : MonoBehaviour
                 if (isMeleeCombat)
                 {
                    maxHealth = maxHealth + 1.5f;
-                   damage = damage - 1.5f;
+                   damage = damage + 1.5f;
                 }
                 break;
             }
@@ -233,12 +256,12 @@ public class Player : MonoBehaviour
             {
                 maxHealth = maxHealth + 1.5f;
                 currentHealth = maxHealth;
-                damage = damage * 1.5f;
+                damage = damage + 1.5f;
                 transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
                 if (isMeleeCombat) 
                 {
                    maxHealth = maxHealth + 1.5f;
-                   damage = damage - 1.5f;
+                   damage = damage + 1.5f;
                 }
                 break;
             }

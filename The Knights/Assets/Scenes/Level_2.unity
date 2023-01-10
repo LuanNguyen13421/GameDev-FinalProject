@@ -14699,7 +14699,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1456073040}
-  player: {fileID: 942294775}
+  player1: {fileID: 801904418}
+  player2: {fileID: 1768715896}
+  player3: {fileID: 482158195}
   LoseGameBanner: {fileID: 143457573}
   WinGameBanner: {fileID: 1845882506}
 --- !u!1 &1098695946

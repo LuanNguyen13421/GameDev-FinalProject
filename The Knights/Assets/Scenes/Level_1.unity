@@ -4996,11 +4996,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 942294778}
+  data:
+    expChar2: 0
+    expChar3: 0
+    sceneIndex: 0
   level: 0
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
-  maxHealth: 15
   timeInvincible: 1
   isDeath: 0
   isMeleeCombat: 1
@@ -6142,11 +6145,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 942294778}
+  data:
+    expChar2: 0
+    expChar3: 0
+    sceneIndex: 0
   level: 0
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
-  maxHealth: 8
   timeInvincible: 1
   isDeath: 0
   isMeleeCombat: 0
@@ -11360,7 +11366,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1456073040}
-  player: {fileID: 942294775}
+  player1: {fileID: 801904418}
+  player2: {fileID: 1768715896}
+  player3: {fileID: 482158195}
   LoseGameBanner: {fileID: 143457573}
   WinGameBanner: {fileID: 1845882506}
 --- !u!1 &1098695946
@@ -13160,11 +13168,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 942294778}
+  data:
+    expChar2: 0
+    expChar3: 0
+    sceneIndex: 0
   level: 0
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
-  maxHealth: 5
   timeInvincible: 1
   isDeath: 0
   isMeleeCombat: 0

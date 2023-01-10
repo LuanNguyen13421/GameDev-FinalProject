@@ -16,10 +16,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        if(!MyGameManager.isNewGame)
-        {
-            transform.SetPositionAndRotation(MyGameManager.Instance.LoadPlayerPosition(),transform.rotation);
-        }
     }
 
     void Update()

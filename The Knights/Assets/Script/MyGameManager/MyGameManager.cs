@@ -30,29 +30,21 @@ public class MyGameManager
     {
         Time.timeScale = 1.0f;
     }
-    public void SaveGame(GameObject player)
+    public void SaveGame(float expChar1, float expChar2, float expChar3, int sceneIndex)
     {
         // Save Game
-        string path = Path.Combine(Application.persistentDataPath, "playerControllerTemp.hd");
+        string path = Path.Combine(Application.persistentDataPath, "player.hd");
         FileStream file = File.Create(path);
-        // Create The Knight data
-        PlayerController theKnightController = player.GetComponent<PlayerController>();
-        Vector2 position;
-        position.x = theKnightController.controllerPosX;
-        position.y = theKnightController.controllerPosY;
-        TheKnightData theKnightData = new TheKnightData(position);
+        TheKnightData data = new TheKnightData(expChar1, expChar2, expChar3, sceneIndex);
         // Create binary formatter
         BinaryFormatter formatter = new BinaryFormatter();
-        formatter.Serialize(file, theKnightData);
+        formatter.Serialize(file, data);
         file.Close();
         Debug.Log("Game saved " + path);
     }
-    public Vector2 LoadPlayerPosition()
+    public TheKnightData LoadSave()
     {
-        Vector2 position;
-        position.x = 0.0f;
-        position.y = 0.0f;
-        string path = Path.Combine(Application.persistentDataPath, "playerControllerTemp.hd");
+        string path = Path.Combine(Application.persistentDataPath, "player.hd");
         if(File.Exists(path))
         {
             FileStream file = File.Open(path, FileMode.Open);
@@ -60,12 +52,10 @@ public class MyGameManager
 
             TheKnightData theKnightData = (TheKnightData)formatter.Deserialize(file);
             file.Close();
-            // Load data
-            position.x = theKnightData.position[0];
-            position.y = theKnightData.position[1];
             Debug.Log("Game loaded" + path);
+            return theKnightData;
         }
-        return position;
+        return null;
     }
     public void SaveGameSetting(float volume, bool isFullScreen, int resolutionIndex)
     {
