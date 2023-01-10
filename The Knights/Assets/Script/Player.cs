@@ -162,52 +162,83 @@ public class Player : MonoBehaviour
     public void ModifyExp(float amount)
     {
         currentExp += amount;
-        //CheckLevel();
+        Debug.Log(currentExp);
+        CheckLevel();
     }
 
     public void CheckLevel()
     {
         if (currentExp >= 10 && currentExp < 20) level = 1;
-        else if (currentExp >= 20 && currentExp < 30) level = 2;
-        else if (currentExp >= 30 && currentExp < 40) level = 3;
-        else if (currentExp >= 40 && currentExp < 50) level = 4;
-        else if (currentExp >= 50) level = 5;
+        else if (currentExp >= 20 && currentExp < 40) level = 2;
+        else if (currentExp >= 40 && currentExp < 80) level = 3;
+        else if (currentExp >= 80 && currentExp < 120) level = 4;
+        else if (currentExp >= 120) level = 5;
 
         switch(level)
         {
             case 1:
             {
-                maxHealth = maxHealth * 1.1f;
+                maxHealth = maxHealth + 1.1f;
+                currentHealth = maxHealth;
                 damage = damage * 1.1f;
-                transform.localScale = new Vector3(1.2f, 1.2f, 1.0f);
-                break;
+                transform.localScale = new Vector3(1.05f, 1.05f, 1.0f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 1.5f;
+                        damage = damage - 1.5f;
+                    }
+                    break;
             }
             case 2:
             {
-                maxHealth = maxHealth * 1.2f;
+                maxHealth = maxHealth + 1.2f;
+                currentHealth = maxHealth;
                 damage = damage * 1.2f;
-                transform.localScale = new Vector3(1.4f, 1.4f, 1.0f);
-                break;
+                transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 1.5f;
+                        damage = damage - 1.5f;
+                    }
+                    break;
             }
             case 3:
             {
-                maxHealth = maxHealth * 1.3f;
-                damage = damage * 1.3f;
-                transform.localScale = new Vector3(1.6f, 1.6f, 1.0f);
-                break;
+                maxHealth = maxHealth + 1.3f;
+                currentHealth = maxHealth;
+                damage = damage + 1.3f;
+                transform.localScale = new Vector3(1.15f, 1.15f, 1.15f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 1.5f;
+                        damage = damage - 1.5f;
+                    }
+                    break;
             }
             case 4:
             {
-                maxHealth = maxHealth * 1.4f;
-                damage = damage * 1.4f;
-                transform.localScale = new Vector3(1.8f, 1.8f, 1.0f);
+                maxHealth = maxHealth + 1.4f;
+                currentHealth = maxHealth;
+                damage = damage + 1.4f;
+                transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                if (isMeleeCombat)
+                {
+                   maxHealth = maxHealth + 1.5f;
+                   damage = damage - 1.5f;
+                }
                 break;
             }
             case 5:
             {
-                maxHealth = maxHealth * 1.5f;
+                maxHealth = maxHealth + 1.5f;
+                currentHealth = maxHealth;
                 damage = damage * 1.5f;
-                transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
+                transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                if (isMeleeCombat) 
+                {
+                   maxHealth = maxHealth + 1.5f;
+                   damage = damage - 1.5f;
+                }
                 break;
             }
         }

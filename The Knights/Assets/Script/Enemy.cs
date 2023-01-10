@@ -27,6 +27,11 @@ public class Enemy : MonoBehaviour
 
     public ParticleSystem deadEffect;
 
+    public GameObject expParticle;
+    int BossExpParticle = 5;
+    int EliteExpParticle = 3;
+    bool isParticleSpawn = false;
+
     float attackCooldown = 0f;
     bool isAttackable = false;
 
@@ -114,21 +119,44 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            if (isParticleSpawn == false)
+            {
+                isParticleSpawn= true;
+                if (enemyType == EnemyTypes.boss)
+                {
+                    for (int i = 0; i < BossExpParticle; i++)
+                    {
+                        GameObject particle = Instantiate(expParticle, 
+                            new Vector3(Random.Range(transform.position.x, transform.position.x + 0.3f), 
+                                        Random.Range(transform.position.y, transform.position.y + 0.3f), 
+                                        transform.position.z), 
+                            transform.rotation);
+                    }
+                }
+                else if (enemyType == EnemyTypes.elite)
+                {
+                    for (int i = 0; i < EliteExpParticle; i++)
+                    {
+                        GameObject particle = Instantiate(expParticle,
+                            new Vector3(Random.Range(transform.position.x, transform.position.x + 0.3f),
+                                        Random.Range(transform.position.y, transform.position.y + 0.3f),
+                                        transform.position.z),
+                            transform.rotation);
+                    }
+
+                }
+                else
+                {
+                    GameObject particle = Instantiate(expParticle,
+                            new Vector3(Random.Range(transform.position.x, transform.position.x + 0.3f),
+                                        Random.Range(transform.position.y, transform.position.y + 0.3f),
+                                        transform.position.z),
+                            transform.rotation);
+                }
+            }
             var effect = Instantiate(deadEffect, transform.position, transform.rotation, gameObject.transform);
             Destroy(effect, effect.main.duration);
             Invoke("Destroy", effect.main.duration);
-            // if (enemyType == EnemyTypes.boss)
-            // {
-            //     player.GetComponent<Player>().ModifyExp(5);
-            // }
-            // else if (enemyType == EnemyTypes.elite)
-            // {
-            //     player.GetComponent<Player>().ModifyExp(3);
-            // }
-            // else 
-            // {
-            //     player.GetComponent<Player>().ModifyExp(1);
-            // }
         }
 
         if (Vector2.Distance(transform.position, player.transform.position) <= attackRange && isAttackable)

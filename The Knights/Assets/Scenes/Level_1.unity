@@ -217,6 +217,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &12466137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +428,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &125997251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,6 +932,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &340252949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5528,6 +5531,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &532591602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11533,6 +11537,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &1132077495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12114,6 +12119,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &1604450832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12404,6 +12410,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &1641030971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12830,6 +12837,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &1703591280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13661,6 +13669,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &1795410328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14160,6 +14169,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &1963206587
 MonoBehaviour:
   m_ObjectHideFlags: 0

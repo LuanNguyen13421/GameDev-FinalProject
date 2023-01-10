@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 0
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -485,6 +486,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!61 &248652141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -767,6 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 1
+  species: 0
   attackType: 1
   damage: 1
   attackRange: 1.5
@@ -774,6 +777,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!61 &321714440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4784,6 +4788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 2
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -4791,6 +4796,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!61 &690365654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4902,6 +4908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 2
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -4909,6 +4916,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &733229022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5111,6 +5119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 1
+  species: 0
   attackType: 1
   damage: 1
   attackRange: 1.5
@@ -5118,6 +5127,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &740382216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11369,6 +11379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 2
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -11376,6 +11387,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!61 &1681427059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12386,6 +12398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 2
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -12393,6 +12406,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!114 &1884986966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12686,6 +12700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 1
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -12693,6 +12708,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!61 &2026737664
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12895,6 +12911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 1
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -12902,6 +12919,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!61 &2080265882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13104,6 +13122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   enemyType: 2
+  species: 0
   attackType: 0
   damage: 1
   attackRange: 0
@@ -13111,6 +13130,7 @@ MonoBehaviour:
   attackForce: 2
   projectilePrefab: {fileID: 5361083432214881371, guid: 836cd9ebf154b114d9619884230fb998, type: 3}
   deadEffect: {fileID: 2356086350333126288, guid: 8fd27a687606a974894f9a7dd94aef0f, type: 3}
+  expParticle: {fileID: 3604840956419504264, guid: 04ab07bc22e5f1e4495ba7274e3d7438, type: 3}
 --- !u!61 &2090869139
 BoxCollider2D:
   m_ObjectHideFlags: 0

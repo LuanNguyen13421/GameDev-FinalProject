@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 79
+  controlID: 91
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 337.59998
     height: 722.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 67
+  controlID: 24
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -287,7 +287,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 46334
+  m_LastSelectedObjectID: 25912
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -389,6 +389,7 @@ MonoBehaviour:
     - {fileID: 3097771945898828744, guid: 7a35b46fea186f340ad59b6124473cca, type: 2}
     - {fileID: -4918994156921921641, guid: 8ce974d9d6a224744be4b488dbc19310, type: 2}
     - {fileID: 3131378946137954811, guid: 4fd7c0f0676226449a1ae15f83bb3ebc, type: 2}
+    - {fileID: 8722654398683882766, guid: c7544effe2dd6554d85defcc95dc5723, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.7668817
       e01: 0
@@ -518,6 +519,22 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 9100000, guid: 8ce974d9d6a224744be4b488dbc19310, type: 2}
   m_BreadCrumbs:
@@ -567,7 +584,7 @@ MonoBehaviour:
   m_Zoom: -1
   m_ScrollPosition: {x: 0, y: 0}
   m_SelectedObject: {fileID: 0}
-  m_SelectedSpriteRectGUID: 00000000000000000000000000000000
+  m_SelectedSpriteRectGUID: db788695b99e5394a8fc2ba735d5bb02
   m_LastUsedModuleTypeName: 
 --- !u!114 &16
 MonoBehaviour:
@@ -610,22 +627,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script/StartMenuScript
+    - Assets/Prefab
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 74
   m_LastFolders:
-  - Assets/Script/StartMenuScript
+  - Assets/Prefab
   m_LastFoldersGridSize: 74
-  m_LastProjectPath: D:\Projects\GameDev-FinalProject\The Knights
+  m_LastProjectPath: E:\DevGame\FinalProject\GameDev-FinalProject\The Knights
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fa790000
-    m_LastClickedID: 31226
-    m_ExpandedIDs: 00000000be6a0000ae73000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 54790000
+    m_LastClickedID: 31060
+    m_ExpandedIDs: 000000002e6b00003685000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,7 +670,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000be6a0000
+    m_ExpandedIDs: 000000002e6b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -781,9 +798,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a6270000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8ec2ffff58c3ffff24c4ffff9ac4ffff58c5ffff24c6ffff9ec6ffffaec7ffff24c8ffffe2c8ffff58c9ffff16caffff0cccffffe4ccffffa6f8ffff80f9ffffcafaffffbcbd000032bf0000
+      m_ExpandedIDs: 02fbffff04fbffff08fbffff0afbffff6e6400002a65000038650000b06500003466000090be0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1087,9 +1104,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 960, y: 540, z: 0}
+    m_Target: {x: 0.72732645, y: 0.8637971, z: -0.07258935}
     speed: 2
-    m_Value: {x: 960, y: 540, z: 0}
+    m_Value: {x: 0.72732645, y: 0.8637971, z: -0.07258935}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1106,7 +1123,7 @@ MonoBehaviour:
     showImageEffects: 1
     showParticleSystems: 1
     showVisualEffectGraphs: 1
-    m_FxEnabled: 1
+    m_FxEnabled: 0
   m_Grid:
     xGrid:
       m_Fade:
@@ -1140,9 +1157,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1101.4536
+    m_Target: 1.0400609
     speed: 2
-    m_Value: 1101.4536
+    m_Value: 1.0400609
   m_Ortho:
     m_Target: 1
     speed: 2
