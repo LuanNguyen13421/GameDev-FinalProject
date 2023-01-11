@@ -58,7 +58,6 @@ public class Player : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
         if (MyGameManager.Instance.LoadSave() != null)
         {
-            Debug.Log("load save");
             data = MyGameManager.Instance.LoadSave();
             if (gameObject.name == "Archer")
             {
@@ -186,7 +185,6 @@ public class Player : MonoBehaviour
     public void ModifyExp(float amount)
     {
         currentExp += amount;
-        Debug.Log(currentExp);
         CheckLevel();
     }
 
