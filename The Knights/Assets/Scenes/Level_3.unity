@@ -7756,7 +7756,7 @@ Tilemap:
       - {fileID: 21300000, guid: 998767c0843c4974298ce81f8ac91169, type: 3}
       - {fileID: 21300000, guid: ae1895c667e9fcd40a16c76b679ebc27, type: 3}
       - {fileID: 21300000, guid: 0bd95c9b541c8a047a3a0c0b95f91844, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: 6, z: 0}
@@ -8608,6 +8608,7 @@ MonoBehaviour:
     expChar3: 0
     sceneIndex: 0
   level: 0
+  currentExp: 0
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -9871,6 +9872,7 @@ MonoBehaviour:
     expChar3: 0
     sceneIndex: 0
   level: 0
+  currentExp: 0
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -22830,11 +22832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0882588efb74c3d4cb2f91ec5454e3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 100
   enemyType: 2
   species: 9
   attackType: 0
-  damage: 3
+  damage: 5
   attackRange: 5
   attackSpeed: 0.2
   attackForce: 4
@@ -23892,6 +23894,7 @@ MonoBehaviour:
     expChar3: 0
     sceneIndex: 0
   level: 0
+  currentExp: 0
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
