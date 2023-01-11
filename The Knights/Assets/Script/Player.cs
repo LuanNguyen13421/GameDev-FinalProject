@@ -9,6 +9,12 @@ public class Player : MonoBehaviour
     // ===================== EXP ==================
     public int level;
     public float currentExp;
+    bool isLevel_1 = false;
+    bool isLevel_2 = false;
+    bool isLevel_3 = false;
+    bool isLevel_4 = false;
+    bool isLevel_5 = false;
+
     public float getExp() { return currentExp; }
     [SerializeField] LevelText levelText;
 
@@ -150,7 +156,6 @@ public class Player : MonoBehaviour
         // Play animation
         animator.SetTrigger("Shoot");
         GameObject projectile = Instantiate(projectileMeleePrefab, transform.position, transform.rotation);
-        Debug.Log(damage);
         projectile.GetComponent<ProjectileForMelee>().SetDamage(damage);
         projectile.GetComponent<ProjectileForMelee>().SetSource(gameObject.transform.tag);
         projectile.GetComponent<ProjectileForMelee>().SetKnockBack(knockBack);
@@ -190,79 +195,35 @@ public class Player : MonoBehaviour
 
     public void CheckLevel()
     {
-        if (currentExp >= 10 && currentExp < 20) level = 1;
-        else if (currentExp >= 20 && currentExp < 40) level = 2;
-        else if (currentExp >= 40 && currentExp < 80) level = 3;
-        else if (currentExp >= 80 && currentExp < 120) level = 4;
-        else if (currentExp >= 120) level = 5;
-
-        switch (level)
+        if (currentExp >= 10 && currentExp < 20 && isLevel_1 == false)
         {
-            case 1:
-                {
-                    maxHealth = maxHealth + 1.1f;
-                    currentHealth = maxHealth;
-                    damage = damage + 1.1f;
-                    transform.localScale = new Vector3(1.05f, 1.05f, 1.0f);
-                    if (isMeleeCombat)
-                    {
-                        maxHealth = maxHealth + 1.5f;
-                        damage = damage + 1.5f;
-                    }
-                    break;
-                }
-            case 2:
-                {
-                    maxHealth = maxHealth + 1.2f;
-                    currentHealth = maxHealth;
-                    damage = damage + 1.2f;
-                    transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-                    if (isMeleeCombat)
-                    {
-                        maxHealth = maxHealth + 1.5f;
-                        damage = damage + 1.5f;
-                    }
-                    break;
-                }
-            case 3:
-                {
-                    maxHealth = maxHealth + 1.3f;
-                    currentHealth = maxHealth;
-                    damage = damage + 1.3f;
-                    transform.localScale = new Vector3(1.15f, 1.15f, 1.15f);
-                    if (isMeleeCombat)
-                    {
-                        maxHealth = maxHealth + 1.5f;
-                        damage = damage + 1.5f;
-                    }
-                    break;
-                }
-            case 4:
-                {
-                    maxHealth = maxHealth + 1.4f;
-                    currentHealth = maxHealth;
-                    damage = damage + 1.4f;
-                    transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-                    if (isMeleeCombat)
-                    {
-                        maxHealth = maxHealth + 1.5f;
-                        damage = damage + 1.5f;
-                    }
-                    break;
-                }
-            case 5:
-                {
-                    maxHealth = maxHealth + 1.5f;
-                    currentHealth = maxHealth;
-                    damage = damage + 1.5f;
-                    transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-                    if (isMeleeCombat)
-                    {
-                        maxHealth = maxHealth + 1.5f;
-                        damage = damage + 1.5f;
-                    }
-                    break;
-                }
+            isLevel_1 = true;
+            level = 1;
+            levelUp(level);
+        }
+        else if (currentExp >= 20 && currentExp < 40 && isLevel_2 == false)
+        {
+            isLevel_2 = true;
+            level = 2;
+            levelUp(level);
+        }
+        else if (currentExp >= 40 && currentExp < 80 && isLevel_3 == false)
+        {
+            isLevel_3 = true;
+            level = 3;
+            levelUp(level);
+        }
+        else if (currentExp >= 80 && currentExp < 120 && isLevel_4 == false)
+        {
+            isLevel_4 = true;
+            level = 4;
+            levelUp(level);
+        }
+        else if (currentExp >= 120 && isLevel_5 == false) 
+        { 
+            isLevel_5 = true;
+            level = 5;
+            levelUp(level);
         }
         levelText.SetLevel(level);
     }
@@ -274,5 +235,76 @@ public class Player : MonoBehaviour
     public void setLevel()
     {
         levelText.SetLevel(level);
+    }
+    public void levelUp(int level)
+    {
+        switch (level)
+        {
+            case 1:
+                {
+                    maxHealth = maxHealth + 1.5f;
+                    damage = damage + 1.0f;
+                    transform.localScale = new Vector3(1.1f, 1.1f, 0f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 1.5f;
+                        damage = damage + 1.0f;
+                    }
+                    currentHealth = maxHealth;
+                    break;
+                }
+            case 2:
+                {
+                    maxHealth = maxHealth + 2.0f;
+                    damage = damage + 1.2f;
+                    transform.localScale = new Vector3(1.15f, 1.15f, 0f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 2.0f;
+                        damage = damage + 1.2f;
+                    }
+                    currentHealth = maxHealth;
+                    break;
+                }
+            case 3:
+                {
+                    maxHealth = maxHealth + 2.0f;
+                    damage = damage + 1.3f;
+                    transform.localScale = new Vector3(1.2f, 1.2f, 0f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 1.0f;
+                        damage = damage + 1.0f;
+                    }
+                    currentHealth = maxHealth;
+                    break;
+                }
+            case 4:
+                {
+                    maxHealth = maxHealth + 2.5f;
+                    damage = damage + 1.4f;
+                    transform.localScale = new Vector3(1.25f, 1.25f, 0f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 1.0f;
+                        damage = damage + 1.5f;
+                    }
+                    currentHealth = maxHealth;
+                    break;
+                }
+            case 5:
+                {
+                    maxHealth = maxHealth + 3.0f;
+                    damage = damage + 1.5f;
+                    transform.localScale = new Vector3(1.3f, 1.3f, 0f);
+                    if (isMeleeCombat)
+                    {
+                        maxHealth = maxHealth + 1.5f;
+                        damage = damage + 1.5f;
+                    }
+                    currentHealth = maxHealth;
+                    break;
+                }
+        }
     }
 }
