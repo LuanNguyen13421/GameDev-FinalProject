@@ -7178,6 +7178,7 @@ MonoBehaviour:
     sceneIndex: 0
   level: 0
   currentExp: 0
+  levelText: {fileID: 1339690107}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -8261,6 +8262,7 @@ MonoBehaviour:
     sceneIndex: 0
   level: 0
   currentExp: 0
+  levelText: {fileID: 1339690107}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -16168,6 +16170,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7026aa223b7fc8446b7c85bd22642ca4, type: 3}
+--- !u!114 &1339690107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 427821223458570065, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+  m_PrefabInstance: {fileID: 1882438224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30dffdd801936c4d911c7f6d2e20f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1370721556 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8330106599846428863, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
@@ -17805,6 +17818,7 @@ MonoBehaviour:
     sceneIndex: 0
   level: 0
   currentExp: 0
+  levelText: {fileID: 1339690107}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}

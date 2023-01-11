@@ -5001,6 +5001,8 @@ MonoBehaviour:
     expChar3: 0
     sceneIndex: 0
   level: 0
+  currentExp: 0
+  levelText: {fileID: 959381853}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -5303,7 +5305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.265, y: 4.5, z: -10}
+  m_LocalPosition: {x: -0.08, y: 0.22, z: -10.414969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6150,6 +6152,8 @@ MonoBehaviour:
     expChar3: 0
     sceneIndex: 0
   level: 0
+  currentExp: 0
+  levelText: {fileID: 959381853}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -11185,6 +11189,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15107743, y: 0.11047859}
   m_EdgeRadius: 0
+--- !u!114 &959381853 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 427821223458570065, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+  m_PrefabInstance: {fileID: 1882438224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30dffdd801936c4d911c7f6d2e20f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &965902299
 GameObject:
   m_ObjectHideFlags: 0
@@ -13173,6 +13188,8 @@ MonoBehaviour:
     expChar3: 0
     sceneIndex: 0
   level: 0
+  currentExp: 0
+  levelText: {fileID: 959381853}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -13964,6 +13981,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366179782}
     m_Modifications:
+    - target: {fileID: 322443859047494810, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 322443859047494810, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8330106598641311656, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

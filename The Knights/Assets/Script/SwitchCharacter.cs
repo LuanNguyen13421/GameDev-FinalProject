@@ -77,18 +77,21 @@ public class SwitchCharacter : MonoBehaviour
     }
     void PlayChar1()
     {
+        char1.setLevel();
         char1.gameObject.SetActive(true);
         char2.gameObject.SetActive(false);
         char3.gameObject.SetActive(false);
     }
     void PlayChar2()
     {
+        char2.setLevel();
         char1.gameObject.SetActive(false);
         char2.gameObject.SetActive(true);
         char3.gameObject.SetActive(false);
     }
     void PlayChar3()
     {
+        char3.setLevel();
         char1.gameObject.SetActive(false);
         char2.gameObject.SetActive(false);
         char3.gameObject.SetActive(true);

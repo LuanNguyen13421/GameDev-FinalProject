@@ -5,8 +5,6 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 public class MyGameManager
 {
-    // Is new game
-    public static bool isNewGame = true;
     // Singleton
     private static MyGameManager _instance;
     public static MyGameManager Instance

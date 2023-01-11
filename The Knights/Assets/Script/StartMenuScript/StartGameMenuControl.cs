@@ -6,12 +6,11 @@ public class StartGameMenuControl : MonoBehaviour
 {
     public void NewGame()
     {
-        MyGameManager.isNewGame = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        MyGameManager.Instance.SaveGame(0, 0, 0, SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void ContinueGame()
     {
-        MyGameManager.isNewGame = false;
         TheKnightData temp = MyGameManager.Instance.LoadSave();
         SceneManager.LoadScene(temp.getSceneIndex());
     }

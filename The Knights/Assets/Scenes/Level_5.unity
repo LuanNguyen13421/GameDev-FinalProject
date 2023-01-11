@@ -815,6 +815,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143457573}
   m_CullTransparentMesh: 1
+--- !u!114 &192625903 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 427821223458570065, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+  m_PrefabInstance: {fileID: 1882438224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30dffdd801936c4d911c7f6d2e20f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &197333208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3603,7 +3614,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 33
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4483,7 +4494,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 24
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 32
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4493,7 +4504,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 23
-      m_TileSpriteIndex: 17
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5293,7 +5304,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 15
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5363,7 +5374,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 12
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6348,18 +6359,18 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 0477c67dc8038d646b7f42afa0363c30, type: 3}
   - m_RefCount: 109
     m_Data: {fileID: 21300000, guid: 685e358262aa0a04794b2a9275b648db, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: af51b2d49c9ec4647a728f2c90ce3adf, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 258e5223111653d4fb91e7a0aec071d7, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 0bd95c9b541c8a047a3a0c0b95f91844, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: dbd2b7c8f9c5a234388ee6ada612131d, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: cdec6b64bafcb8a4ebaa3a774037e1d5, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 4729c256ed4cf354ba95df0310bc11be, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 9312fbeb69f8a4946838fdaf8569e755, type: 3}
   - m_RefCount: 2
@@ -6371,9 +6382,9 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 389c862d73d54844fb4ce0c2e817a92f, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: a15b0e7b0da512f4e947b7f58eb7049a, type: 3}
+    m_Data: {fileID: 21300000, guid: 4729c256ed4cf354ba95df0310bc11be, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 679d209f619c3824bbbc6d9746a30dd9, type: 3}
+    m_Data: {fileID: 21300000, guid: a15b0e7b0da512f4e947b7f58eb7049a, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: 6cd55da36de40cf45b1a80c857180a0b, type: 3}
   - m_RefCount: 3
@@ -6400,10 +6411,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: e1942bc5fa9d2d249a09b1725816b956, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 53c03864913022740903cbd7507af48d, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 679d209f619c3824bbbc6d9746a30dd9, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: af51b2d49c9ec4647a728f2c90ce3adf, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 362
     m_Data:
@@ -6991,6 +7002,7 @@ MonoBehaviour:
     sceneIndex: 0
   level: 0
   currentExp: 0
+  levelText: {fileID: 192625903}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -8548,6 +8560,7 @@ MonoBehaviour:
     sceneIndex: 0
   level: 0
   currentExp: 0
+  levelText: {fileID: 192625903}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
@@ -18672,6 +18685,7 @@ MonoBehaviour:
     sceneIndex: 0
   level: 0
   currentExp: 0
+  levelText: {fileID: 192625903}
   projectilePrefab: {fileID: 7630536625081857524, guid: 61f877e32415cc1418db729cd033d985, type: 3}
   projectileMeleePrefab: {fileID: 7630536625081857524, guid: 9794a03c886e45746a977e6c24d90671, type: 3}
   healthBar: {fileID: 1370721556}
