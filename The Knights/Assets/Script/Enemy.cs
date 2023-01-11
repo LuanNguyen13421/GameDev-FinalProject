@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 3f;
+    float maxHealth;
     //[SerializeField] AreEnemiesDead controlEnemy;
     GameObject player;
 
@@ -37,9 +38,10 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
 
-    private void OnGUI()
+    private void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
     public void SetAttack(bool value)
@@ -75,7 +77,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         if (enemyType == EnemyTypes.boss)
         {
-            gameObject.transform.localScale *= 2f;
+            gameObject.transform.localScale *= 3f;
         } else if (enemyType == EnemyTypes.elite)
         {
             gameObject.transform.localScale *= 1.5f;
@@ -103,6 +105,8 @@ public class Enemy : MonoBehaviour
         {
             attackRange = 0.2f;
         }
+
+        maxHealth = health;
     }
 
     // Update is called once per frame
@@ -180,6 +184,12 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
+        if (enemyType == EnemyTypes.boss)
+        {
+            BossAttack();
+            return;
+        }
+        
         GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         projectile.GetComponent<Projectile>().SetDamage(damage);
         projectile.GetComponent<Projectile>().SetSource(gameObject.transform.tag);
@@ -187,5 +197,73 @@ public class Enemy : MonoBehaviour
         Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
         Vector2 source = new Vector2(transform.position.x, transform.position.y);
         projectile.GetComponent<Rigidbody2D>().AddForce((target - source).normalized * attackForce, ForceMode2D.Impulse);
+    }
+
+    int normalAttackCount = 0;
+    int specialAttackCount = 0;
+    int specialAttack2Count = 0;
+    int beamCount = 5;
+    int summonCount = 15;
+    bool hasSummoned = false;
+
+    void BossAttack()
+    {
+        if (health/maxHealth <= 0.5)
+        {
+            beamCount = 10;
+            Summon();
+            gameObject.GetComponent<Renderer>().material.color = Color.red;
+        }
+
+        if (normalAttackCount <= 2)
+        {
+            GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+            projectile.transform.localScale *= 2f;
+            projectile.GetComponent<Projectile>().SetDamage(damage);
+            projectile.GetComponent<Projectile>().SetSource(gameObject.transform.tag);
+            //projectile.GetComponent<Projectile>().SetKnockBack(knockBack);
+            Vector2 target = new Vector2(player.transform.position.x, player.transform.position.y);
+            Vector2 source = new Vector2(transform.position.x, transform.position.y);
+            projectile.GetComponent<Rigidbody2D>().AddForce((target - source).normalized * attackForce, ForceMode2D.Impulse);
+            normalAttackCount++;
+        }
+        else
+        {
+            normalAttackCount = 0;
+            for (int i = 0; i < beamCount; i++)
+            {
+                GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+                projectile.transform.localScale *= 2f;
+                projectile.GetComponent<Projectile>().SetDamage(damage);
+                projectile.GetComponent<Projectile>().SetSource(gameObject.transform.tag);
+                float angleInRad = Mathf.Rad2Deg * (360 / beamCount) * (i + 1);
+                Vector2 direction;
+                direction.x = Vector2.up.x * Mathf.Cos(angleInRad) - Vector2.up.y * Mathf.Sin(angleInRad);
+                direction.y = Vector2.up.x * Mathf.Sin(angleInRad) + Vector2.up.y * Mathf.Cos(angleInRad);
+                Debug.Log(direction);
+                projectile.GetComponent<Rigidbody2D>().AddForce(direction.normalized * attackForce, ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    void Summon()
+    {
+        if (hasSummoned)
+        {
+            return;
+        }
+        
+        hasSummoned = true;
+        float spawnRange = gameObject.GetComponent<EnemyController>().lookRange;
+
+        for (int i = 0; i < summonCount; i++)
+        {
+            Vector2 spawnPosition;
+            spawnPosition.x = Random.Range(-1 * spawnRange, spawnRange);
+            spawnPosition.y = Random.Range(-1 * spawnRange, spawnRange);
+            GameObject mob = Instantiate((GameObject)Resources.Load("Prefab/Mob"), spawnPosition, transform.rotation);
+            mob.transform.parent = transform.parent;
+            mob.GetComponent<EnemySpawner>().StartSpawnCount();
+        }    
     }
 }
