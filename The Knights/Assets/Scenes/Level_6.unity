@@ -22122,7 +22122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274376338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28, y: 4.06, z: 0}
+  m_LocalPosition: {x: -10.88, y: -3.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24379,6 +24379,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366179782}
     m_Modifications:
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1070951448}
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8330106598641311656, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
