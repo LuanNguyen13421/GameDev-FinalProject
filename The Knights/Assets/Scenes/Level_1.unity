@@ -13989,6 +13989,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1070951448}
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366710442554454609, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8330106598641311656, guid: dbc42f3d39700514cb4d18768d0a68de, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
