@@ -44,6 +44,10 @@ public class EnemyController : MonoBehaviour
             Vector3 newScale = transform.localScale;
             newScale.x *= -1;
             transform.localScale = newScale;
+
+            Vector3 healthBarScale = transform.Find("HealthBar(Clone)").transform.localScale;
+            healthBarScale.x *= -1;
+            transform.Find("HealthBar(Clone)").localScale = healthBarScale;
         }
 
         if (Vector2.Distance(transform.position, target.position) <= lookRange)

@@ -38,6 +38,11 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
 
+    float healthBarTimer;
+    GameObject healthBar;
+    Vector3 healthBarOffset;
+    float healthBarScale;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -75,12 +80,22 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         
         player = GameObject.FindGameObjectWithTag("Player");
+
+        healthBarOffset = new Vector3(0, 0.15f, 0);
+        healthBarScale = 1f;
+
         if (enemyType == EnemyTypes.boss)
         {
             gameObject.transform.localScale *= 3f;
+            healthBarOffset.y = 0.45f;
+            healthBarScale = 3f;
+
+
         } else if (enemyType == EnemyTypes.elite)
         {
             gameObject.transform.localScale *= 1.5f;
+            healthBarOffset.y = 0.25f;
+            healthBarScale = 1.5f;
         }
         if (species == Species.none)
         {
@@ -107,6 +122,14 @@ public class Enemy : MonoBehaviour
         }
 
         maxHealth = health;
+
+        healthBar = Instantiate((GameObject)Resources.Load("Prefab/HealthBar"), transform.position, transform.rotation);
+        healthBar.transform.parent = transform;
+        healthBar.transform.position += healthBarOffset;
+        Vector3 temp = healthBar.transform.localScale;
+        temp.x *= healthBarScale;
+        temp.y *= healthBarScale/1.4f;
+        healthBar.transform.localScale = temp;
     }
 
     // Update is called once per frame
@@ -119,6 +142,15 @@ public class Enemy : MonoBehaviour
         if (attackCooldown <= 0)
         {
             isAttackable = true;
+        }
+
+        if (healthBarTimer > 0)
+        {
+            healthBarTimer -= Time.deltaTime;
+        }
+        if (healthBarTimer <= 0)
+        {
+            HideHealthBar();
         }
 
         if (health <= 0)
@@ -180,6 +212,25 @@ public class Enemy : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         health += amount;
+        healthBarTimer = 3;
+        Vector3 temp = healthBar.transform.GetChild(1).transform.localScale;
+        temp.x = 0.5f * (health / maxHealth);
+        if (temp.x < 0)
+        {
+            temp.x = 0;
+        }
+        healthBar.transform.GetChild(1).transform.localScale = temp;
+        ShowHealthBar();
+    }
+
+    void ShowHealthBar()
+    {
+        healthBar.gameObject.SetActive(true);
+    }   
+    
+    void HideHealthBar()
+    {
+        healthBar.gameObject.SetActive(false);
     }
 
     void Attack()
